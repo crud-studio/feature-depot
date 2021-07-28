@@ -1,0 +1,3 @@
+package studio.crud.feature.auth.authentication.notifier.listener
+
+interface AuthenticationListener

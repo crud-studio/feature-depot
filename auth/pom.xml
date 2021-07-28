@@ -1,0 +1,74 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+	<groupId>studio.crud.feature</groupId>
+	<artifactId>auth</artifactId>
+	<version>1.0.0-SNAPSHOT</version>
+	<name>Auth Feature</name>
+
+	<parent>
+		<groupId>studio.crud</groupId>
+		<artifactId>parent-pom</artifactId>
+		<version>1.0</version>
+		<relativePath />
+	</parent>
+
+	<properties>
+		<jar-name>auth</jar-name>
+	</properties>
+
+	<dependencies>
+		<!--    Internal    -->
+		<dependency>
+			<groupId>studio.crud</groupId>
+			<artifactId>shared-common</artifactId>
+		</dependency>
+
+		<!--    Misc    -->
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-security</artifactId>
+			<exclusions>
+				<exclusion>
+					<artifactId>spring-boot-starter-logging</artifactId>
+					<groupId>org.springframework.boot</groupId>
+				</exclusion>
+			</exclusions>
+		</dependency>
+		<dependency>
+			<groupId>org.flywaydb</groupId>
+			<artifactId>flyway-core</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>com.auth0</groupId>
+			<artifactId>java-jwt</artifactId>
+			<version>3.13.0</version>
+		</dependency>
+		<dependency>
+			<groupId>com.nexmo</groupId>
+			<artifactId>client</artifactId>
+			<version>5.2.0</version>
+		</dependency>
+		<dependency>
+			<groupId>com.warrenstrange</groupId>
+			<artifactId>googleauth</artifactId>
+			<version>1.1.2</version>
+		</dependency>
+		<dependency>
+			<groupId>com.google.api-client</groupId>
+			<artifactId>google-api-client</artifactId>
+			<version>1.30.10</version>
+		</dependency>
+		<dependency>
+			<groupId>commons-codec</groupId>
+			<artifactId>commons-codec</artifactId>
+			<version>1.10</version>
+		</dependency>
+		<dependency>
+			<groupId>com.google.api-client</groupId>
+			<artifactId>google-api-client</artifactId>
+			<version>1.15.0-rc</version>
+			<scope>compile</scope>
+		</dependency>
+	</dependencies>
+</project>
