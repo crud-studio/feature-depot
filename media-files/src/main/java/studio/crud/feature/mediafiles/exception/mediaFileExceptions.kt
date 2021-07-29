@@ -32,3 +32,6 @@ class MediaFileLocationUnavailableException : ServerException("Cannot download: 
     ]
 )
 class MediaFileNotFoundByUuidException(val mediaFileUuid: String) : AbstractResourceNotFoundByUuidException(mediaFileUuid, "MediaFile")
+
+@ExceptionMetadata
+class MediaFileAccessDeniedException : ServerException("Access denied to Media File")

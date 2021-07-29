@@ -23,7 +23,7 @@ class MediaFileHandlerImpl(
     @ComponentMap
     private lateinit var additionalStorageProviders: Map<MediaFileStorageType, List<MediaFileStorageProvider>>
 
-    override fun uploadFile(multipartFile: MultipartFile, alias: String?, description: String?): MediaFile {
+    override fun uploadFile(multipartFile: MultipartFile, alias: String?, description: String?, creatorObjectId: Long?, creatorObjectType: String?): MediaFile {
         val fileUuid = UUID.randomUUID().toDoubleBase64ForUrls()
         val fileHash = DigestUtils.sha256Hex(multipartFile.bytes)
         val extension = FilenameUtils.getExtension(multipartFile.originalFilename).toLowerCase()
@@ -36,13 +36,14 @@ class MediaFileHandlerImpl(
         mediaFile.fileHash = fileHash
         mediaFile.alias = alias
         mediaFile.description = description
+        mediaFile.creatorObjectId = creatorObjectId
+        mediaFile.creatorObjectType = creatorObjectType
         return crudHandler.create(mediaFile).execute()
     }
 
-    override fun downloadFile(uuid: String): Pair<MediaFile, ByteArray> {
-        val mediaFile = getMediaFileByUuid(uuid)
+    override fun downloadFile(mediaFile: MediaFile): ByteArray {
         val storageProvider = additionalStorageProviders[mediaFile.storageType]?.find { it.location == mediaFile.location } ?: throw MediaFileLocationUnavailableException()
-        return mediaFile to storageProvider.download(mediaFile.remoteName)
+        return storageProvider.download(mediaFile.remoteName)
     }
 
     override fun getMediaFileByUuid(uuid: String): MediaFile {
