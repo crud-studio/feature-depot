@@ -9,7 +9,7 @@
 		<groupId>studio.crud.feature</groupId>
 		<artifactId>feature-parent-pom</artifactId>
 		<version>1.0</version>
-		<relativePath />
+		<relativePath>../pom.xml</relativePath>
 	</parent>
 
 	<properties>
