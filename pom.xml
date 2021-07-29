@@ -19,5 +19,6 @@
 		<module>flyway</module>
 		<module>auth</module>
 		<module>parameters</module>
+		<module>media-files</module>
 	</modules>
 </project>

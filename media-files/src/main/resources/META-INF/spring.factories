@@ -1,0 +1,2 @@
+org.springframework.boot.autoconfigure.EnableAutoConfiguration=\
+  studio.crud.feature.mediafiles.config.MediaFilesFeatureAutoConfiguration
