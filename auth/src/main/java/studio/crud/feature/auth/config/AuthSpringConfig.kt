@@ -52,6 +52,7 @@ class AuthSpringConfig : WebSecurityConfigurerAdapter(), WebMvcConfigurer {
     override fun configure(http: HttpSecurity) {
         http
             .csrf().disable()
+            .sessionManagement().disable()
             .exceptionHandling()
             .authenticationEntryPoint(restAuthenticationEntryPoint)
             .and()
