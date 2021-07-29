@@ -1,7 +1,7 @@
 package studio.crud.feature.auth.flyway
 
 import org.springframework.stereotype.Component
-import studio.crud.sharedcommon.flyway.FlywayLocationProvider
+import studio.crud.feature.flyway.FlywayLocationProvider
 
 @Component
 class AuthFlywayLocationProvider : FlywayLocationProvider {

@@ -1,0 +1,33 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+    <artifactId>flyway</artifactId>
+    <version>1.0.0-SNAPSHOT</version>
+    <name>Flyway Feature</name>
+
+    <parent>
+        <groupId>studio.crud.feature</groupId>
+        <artifactId>feature-parent-pom</artifactId>
+        <version>1.0</version>
+        <relativePath/>
+    </parent>
+
+    <properties>
+        <jar-name>flyway</jar-name>
+        <flyway.version>7.11.4</flyway.version>
+    </properties>
+
+    <dependencies>
+        <!--    Internal    -->
+        <dependency>
+            <groupId>studio.crud</groupId>
+            <artifactId>shared-common</artifactId>
+        </dependency>
+
+        <dependency>
+            <groupId>org.flywaydb</groupId>
+            <artifactId>flyway-core</artifactId>
+            <version>${flyway.version}</version>
+        </dependency>
+    </dependencies>
+</project>

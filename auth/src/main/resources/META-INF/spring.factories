@@ -1,2 +1,2 @@
 org.springframework.boot.autoconfigure.EnableAutoConfiguration=\
-  studio.crud.feature.auth.config.AuthAutoConfiguration
+  studio.crud.feature.auth.config.AuthFeatureAutoConfiguration

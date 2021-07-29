@@ -1,2 +1,2 @@
 org.springframework.boot.autoconfigure.EnableAutoConfiguration=\
-  studio.crud.feature.parameters.config.ParameterAutoConfiguration
+  studio.crud.feature.parameters.config.ParameterFeatureAutoConfiguration

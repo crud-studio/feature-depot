@@ -5,4 +5,4 @@ import org.springframework.context.annotation.Configuration
 
 @Configuration
 @ComponentScan("studio.crud.feature.parameters")
-class ParameterAutoConfiguration
+class ParameterFeatureAutoConfiguration

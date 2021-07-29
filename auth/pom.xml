@@ -1,14 +1,13 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
 	<modelVersion>4.0.0</modelVersion>
-	<groupId>studio.crud.feature</groupId>
 	<artifactId>auth</artifactId>
 	<version>1.0.0-SNAPSHOT</version>
 	<name>Auth Feature</name>
 
 	<parent>
-		<groupId>studio.crud</groupId>
-		<artifactId>parent-pom</artifactId>
+		<groupId>studio.crud.feature</groupId>
+		<artifactId>feature-parent-pom</artifactId>
 		<version>1.0</version>
 		<relativePath />
 	</parent>
@@ -24,6 +23,11 @@
 			<artifactId>shared-common</artifactId>
 		</dependency>
 
+		<dependency>
+			<groupId>studio.crud.feature</groupId>
+			<artifactId>flyway</artifactId>
+		</dependency>
+
 		<!--    Misc    -->
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
@@ -34,10 +38,6 @@
 					<groupId>org.springframework.boot</groupId>
 				</exclusion>
 			</exclusions>
-		</dependency>
-		<dependency>
-			<groupId>org.flywaydb</groupId>
-			<artifactId>flyway-core</artifactId>
 		</dependency>
 		<dependency>
 			<groupId>com.auth0</groupId>

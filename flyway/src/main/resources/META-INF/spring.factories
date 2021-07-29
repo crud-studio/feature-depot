@@ -1,0 +1,4 @@
+org.springframework.boot.autoconfigure.EnableAutoConfiguration=\
+  studio.crud.feature.flyway.config.FlywayFeatureAutoConfiguration
+
+org.springframework.boot.autoconfigure.AutoConfigurationImportFilter=studio.crud.feature.flyway.config.FlywayAutoConfigurationExclusionFilter
