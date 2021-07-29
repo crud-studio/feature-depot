@@ -21,5 +21,6 @@
 		<module>parameters</module>
 		<module>media-files</module>
 		<module>reports</module>
+		<module>trace-log</module>
 	</modules>
 </project>
