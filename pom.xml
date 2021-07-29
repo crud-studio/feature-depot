@@ -20,5 +20,6 @@
 		<module>auth</module>
 		<module>parameters</module>
 		<module>media-files</module>
+		<module>reports</module>
 	</modules>
 </project>
