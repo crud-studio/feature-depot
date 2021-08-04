@@ -8,5 +8,13 @@ data class UserInfo(
     val parsedToken: ParsedStatelessToken,
     val traits: List<AuthenticationTrait>,
     val grants: Set<String>
-    // todo: user suspiciousness
-)
+) {
+    companion object {
+        fun UserInfo.hasGrant(grant: String): Boolean {
+            return hasAnyGrant(grant)
+        }
+        fun UserInfo.hasAnyGrant(vararg grants: String): Boolean {
+            return this.grants.any { it in grants }
+        }
+    }
+}
