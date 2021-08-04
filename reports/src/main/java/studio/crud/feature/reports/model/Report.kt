@@ -13,11 +13,6 @@ import javax.persistence.Table
 
 @Entity
 @Table
-//@PermissionedEntity(
-//    create = PermissionedEntity.PermissionGenerationMode.NEVER,
-//    update = PermissionedEntity.PermissionGenerationMode.NEVER,
-//    delete = PermissionedEntity.PermissionGenerationMode.NEVER
-//)
 @Immutable
 @DefaultMappingTarget(ReportRO::class)
 class Report : AbstractJpaUpdatableEntity() {
