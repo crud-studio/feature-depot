@@ -1,6 +1,5 @@
 package studio.crud.feature.mediafiles.controller
 
-import com.antelopesystem.crudframework.web.annotation.CRUDActions
 import org.springframework.beans.factory.annotation.Autowired
 import org.springframework.web.bind.annotation.GetMapping
 import org.springframework.web.bind.annotation.PathVariable
@@ -10,6 +9,7 @@ import org.springframework.web.multipart.MultipartFile
 import studio.crud.feature.mediafiles.MediaFileService
 import studio.crud.feature.mediafiles.model.MediaFile
 import studio.crud.feature.mediafiles.ro.MediaFileRO
+import studio.crud.sharedcommon.crud.web.CRUDActions
 import studio.crud.sharedcommon.web.controller.AbstractSimplifiedErrorHandlingJpaCrudController
 import studio.crud.sharedcommon.web.ro.ResultRO
 import javax.servlet.http.HttpServletResponse
