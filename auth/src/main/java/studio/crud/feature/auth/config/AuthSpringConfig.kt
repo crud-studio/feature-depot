@@ -39,6 +39,7 @@ class AuthSpringConfig : WebSecurityConfigurerAdapter(), WebMvcConfigurer {
             .addMapping("/**")
             .allowedOrigins("*")
             .allowedHeaders("x-token", "x-client-public-key", "Content-Type")
+            .exposedHeaders("x-server-public-key")
             .maxAge(3600)
             .allowedMethods("POST", "GET", "PUT", "OPTIONS", "DELETE")
     }
