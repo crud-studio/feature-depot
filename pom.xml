@@ -22,5 +22,6 @@
 		<module>media-files</module>
 		<module>reports</module>
 		<module>trace-log</module>
+		<module>kubernetes</module>
 	</modules>
 </project>
