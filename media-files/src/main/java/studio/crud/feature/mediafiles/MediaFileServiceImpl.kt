@@ -8,9 +8,9 @@ import org.springframework.web.multipart.MultipartFile
 import studio.crud.feature.mediafiles.enums.MediaFileAclMode
 import studio.crud.feature.mediafiles.exception.MediaFileAccessDeniedException
 import studio.crud.feature.mediafiles.exception.MediaFileNotFoundByUuidException
-import studio.crud.feature.mediafiles.hooks.MediaFileCreatorResolver
 import studio.crud.feature.mediafiles.hooks.MediaFileDownloadHooks
 import studio.crud.feature.mediafiles.ro.MediaFileRO
+import studio.crud.sharedcommon.audit.util.CurrentEntityResolver
 import javax.servlet.http.HttpServletResponse
 
 @Service
@@ -18,13 +18,13 @@ class MediaFileServiceImpl(
     private val crudHandler: CrudHandler,
     private val mediaFileHandler: MediaFileHandler,
     @Autowired(required = false)
-    private val mediaFileCreatorResolver: MediaFileCreatorResolver?,
+    private val currentEntityResolver: CurrentEntityResolver?,
     @Autowired(required = false)
     private val mediaFileDownloadHooks: List<MediaFileDownloadHooks> = emptyList()
 ) : MediaFileService {
     override fun uploadFile(file: MultipartFile, alias: String?, description: String?, aclMode: MediaFileAclMode): MediaFileRO {
-        val resolvedCreator = mediaFileCreatorResolver?.resolve()
-        val mediaFile = mediaFileHandler.uploadFile(file, alias, description, resolvedCreator?.objectId, resolvedCreator?.objectType, aclMode)
+        val resolvedCreator = currentEntityResolver?.resolve()
+        val mediaFile = mediaFileHandler.uploadFile(file, alias, description, resolvedCreator?.objectId?.toLong(), resolvedCreator?.objectType, aclMode)
         return crudHandler.getRO(mediaFile, MediaFileRO::class.java)
     }
 
@@ -33,8 +33,8 @@ class MediaFileServiceImpl(
     }
 
     override fun uploadAndAssociateFile(file: MultipartFile, alias: String?, description: String?, entityId: Long, entityName: String, fieldName: String): MediaFileRO {
-        val resolvedCreator = mediaFileCreatorResolver?.resolve()
-        val mediaFile = mediaFileHandler.uploadAndAssociateFile(file, alias, description, entityId, entityName, fieldName, resolvedCreator?.objectId, resolvedCreator?.objectType)
+        val resolvedCreator = currentEntityResolver?.resolve()
+        val mediaFile = mediaFileHandler.uploadAndAssociateFile(file, alias, description, entityId, entityName, fieldName, resolvedCreator?.objectId?.toLong(), resolvedCreator?.objectType)
         return crudHandler.getRO(mediaFile, MediaFileRO::class.java)
     }
 

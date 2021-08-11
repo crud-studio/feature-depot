@@ -23,5 +23,6 @@
 		<module>reports</module>
 		<module>trace-log</module>
 		<module>kubernetes</module>
+		<module>remote-storage</module>
 	</modules>
 </project>
