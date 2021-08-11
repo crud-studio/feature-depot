@@ -70,6 +70,19 @@ class MediaFileHandlerImpl(
         return uploadedMediaFile
     }
 
+    override fun deleteAssociatedMediaFile(entityId: Long, entityName: String, fieldName: String) {
+        val metadata = mediaFileEntityFieldResolver.getFieldMetadata(entityName, fieldName)
+        crudHandler.updateByFilter(where {
+            "id" Equal entityId
+        }, metadata.entityClazz.java as Class<BaseCrudEntity<Long>>)
+            .withOnHook(CRUDOnUpdateHook {
+                ReflectionUtils.makeAccessible(metadata.field)
+                metadata.field.set(it, null)
+            })
+            // todo: enforceAccess
+            .execute() ?: throw MediaFileEntityNotFoundException(entityId, entityName)
+    }
+
     override fun downloadFile(mediaFile: MediaFile): ByteArray {
         val storageProvider = additionalStorageProviders[mediaFile.storageType]?.find { it.location == mediaFile.location } ?: throw MediaFileLocationUnavailableException()
         return storageProvider.download(mediaFile.remoteName)

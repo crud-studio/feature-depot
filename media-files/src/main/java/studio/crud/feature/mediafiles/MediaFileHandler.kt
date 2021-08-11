@@ -9,4 +9,5 @@ interface MediaFileHandler {
     fun uploadAndAssociateFile(file: MultipartFile, alias: String?, description: String?, entityId: Long, entityName: String, fieldName: String, creatorObjectId: Long?, creatorObjectType: String?): MediaFile
     fun downloadFile(mediaFile: MediaFile): ByteArray
     fun getMediaFileByUuid(uuid: String): MediaFile
+    fun deleteAssociatedMediaFile(entityId: Long, entityName: String, fieldName: String)
 }

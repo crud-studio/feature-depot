@@ -2,10 +2,7 @@ package studio.crud.feature.mediafiles.controller
 
 import org.springframework.beans.factory.annotation.Autowired
 import org.springframework.http.ResponseEntity
-import org.springframework.web.bind.annotation.GetMapping
-import org.springframework.web.bind.annotation.PathVariable
-import org.springframework.web.bind.annotation.PostMapping
-import org.springframework.web.bind.annotation.RequestParam
+import org.springframework.web.bind.annotation.*
 import org.springframework.web.multipart.MultipartFile
 import studio.crud.feature.mediafiles.MediaFileService
 import studio.crud.feature.mediafiles.enums.MediaFileAclMode
@@ -52,18 +49,28 @@ abstract class AbstractMediaFileController<RO : MediaFileRO>:
         }
     }
 
-    @PostMapping("/uploadAndAssociate/{entityId}/{entityType}/{fieldName}")
+    @PostMapping("/uploadAndAssociate/{entityId}/{entityName}/{fieldName}")
     fun uploadAndAssociate(
         @RequestParam(value = "file") file: MultipartFile,
         @RequestParam(required = false) alias: String?,
         @RequestParam(required = false) description: String?,
         @PathVariable entityId: Long,
-        @PathVariable entityType: String,
+        @PathVariable entityName: String,
         @PathVariable fieldName: String
     ): ResponseEntity<ResultRO<*>> {
         return wrapResult {
-            mediaFileService.uploadAndAssociateFile(file, alias, description, entityId, entityType, fieldName)
+            mediaFileService.uploadAndAssociateFile(file, alias, description, entityId, entityName, fieldName)
         }
+    }
 
+    @DeleteMapping("/deleteAssociatedMediaFile/{entityId}/{entityName}/{fieldName}")
+    fun deleteAssociatedMediaFile(
+        @PathVariable entityId: Long,
+        @PathVariable entityName: String,
+        @PathVariable fieldName: String
+    ): ResponseEntity<ResultRO<*>> {
+        return wrapResult {
+            mediaFileService.deleteAssociatedMediaFile(entityId, entityName, fieldName)
+        }
     }
 }

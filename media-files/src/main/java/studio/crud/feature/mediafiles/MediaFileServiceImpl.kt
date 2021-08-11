@@ -28,6 +28,10 @@ class MediaFileServiceImpl(
         return crudHandler.getRO(mediaFile, MediaFileRO::class.java)
     }
 
+    override fun deleteAssociatedMediaFile(entityId: Long, entityName: String, fieldName: String) {
+        mediaFileHandler.deleteAssociatedMediaFile(entityId, entityName, fieldName)
+    }
+
     override fun uploadAndAssociateFile(file: MultipartFile, alias: String?, description: String?, entityId: Long, entityName: String, fieldName: String): MediaFileRO {
         val resolvedCreator = mediaFileCreatorResolver?.resolve()
         val mediaFile = mediaFileHandler.uploadAndAssociateFile(file, alias, description, entityId, entityName, fieldName, resolvedCreator?.objectId, resolvedCreator?.objectType)
