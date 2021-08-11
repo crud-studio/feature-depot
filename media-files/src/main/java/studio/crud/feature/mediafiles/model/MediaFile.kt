@@ -2,9 +2,11 @@ package studio.crud.feature.mediafiles.model
 
 import com.antelopesystem.crudframework.fieldmapper.annotation.DefaultMappingTarget
 import com.antelopesystem.crudframework.fieldmapper.annotation.MappedField
+import com.antelopesystem.crudframework.fieldmapper.annotation.MappedFields
 import studio.crud.feature.mediafiles.enums.MediaFileAclMode
 import studio.crud.feature.mediafiles.enums.MediaFileStorageType
 import studio.crud.feature.mediafiles.ro.MediaFileRO
+import studio.crud.feature.mediafiles.ro.MinimalMediaFileRO
 import studio.crud.sharedcommon.crud.jpa.model.AbstractJpaUpdatableEntity
 import studio.crud.sharedcommon.extentions.toDoubleBase64ForUrls
 import java.util.*
@@ -27,7 +29,10 @@ class MediaFile(
     /**
      * The original file name
      */
-    @MappedField
+    @MappedFields(
+        MappedField(),
+        MappedField(target = MinimalMediaFileRO::class)
+    )
     @Column(name = "name", nullable = false)
     var name: String,
 
@@ -40,7 +45,10 @@ class MediaFile(
     /**
      * Internal UUID
      */
-    @MappedField
+    @MappedFields(
+        MappedField(),
+        MappedField(target = MinimalMediaFileRO::class)
+    )
     @Column(name = "uuid", nullable = false, updatable = false)
     var uuid: String = UUID.randomUUID().toDoubleBase64ForUrls()
 
@@ -69,14 +77,20 @@ class MediaFile(
     /**
      * The file's extension
      */
-    @MappedField
+    @MappedFields(
+        MappedField(),
+        MappedField(target = MinimalMediaFileRO::class)
+    )
     @Column(name = "extension", nullable = true)
     var extension: String? = null
 
     /**
      * The file's size in bytes
      */
-    @MappedField
+    @MappedFields(
+        MappedField(),
+        MappedField(target = MinimalMediaFileRO::class)
+    )
     @Column(name = "size", nullable = true)
     var size: Long? = null
 
@@ -90,7 +104,10 @@ class MediaFile(
     /**
      * Optional file name alias
      */
-    @MappedField
+    @MappedFields(
+        MappedField(),
+        MappedField(target = MinimalMediaFileRO::class)
+    )
     @Column(name = "alias", nullable = true)
     var alias: String? = null
 

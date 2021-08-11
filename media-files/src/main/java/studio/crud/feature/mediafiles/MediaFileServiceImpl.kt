@@ -5,11 +5,11 @@ import org.springframework.beans.factory.annotation.Autowired
 import org.springframework.http.HttpStatus
 import org.springframework.stereotype.Service
 import org.springframework.web.multipart.MultipartFile
+import studio.crud.feature.mediafiles.enums.MediaFileAclMode
 import studio.crud.feature.mediafiles.exception.MediaFileAccessDeniedException
 import studio.crud.feature.mediafiles.exception.MediaFileNotFoundByUuidException
 import studio.crud.feature.mediafiles.hooks.MediaFileCreatorResolver
 import studio.crud.feature.mediafiles.hooks.MediaFileDownloadHooks
-import studio.crud.feature.mediafiles.model.MediaFile
 import studio.crud.feature.mediafiles.ro.MediaFileRO
 import javax.servlet.http.HttpServletResponse
 
@@ -22,9 +22,15 @@ class MediaFileServiceImpl(
     @Autowired(required = false)
     private val mediaFileDownloadHooks: List<MediaFileDownloadHooks> = emptyList()
 ) : MediaFileService {
-    override fun uploadFile(multipartFile: MultipartFile, alias: String?, description: String?): MediaFileRO {
+    override fun uploadFile(file: MultipartFile, alias: String?, description: String?, aclMode: MediaFileAclMode): MediaFileRO {
         val resolvedCreator = mediaFileCreatorResolver?.resolve()
-        val mediaFile = mediaFileHandler.uploadFile(multipartFile, alias, description, resolvedCreator?.objectId, resolvedCreator?.objectType)
+        val mediaFile = mediaFileHandler.uploadFile(file, alias, description, resolvedCreator?.objectId, resolvedCreator?.objectType, aclMode)
+        return crudHandler.getRO(mediaFile, MediaFileRO::class.java)
+    }
+
+    override fun uploadAndAssociateFile(file: MultipartFile, alias: String?, description: String?, entityId: Long, entityName: String, fieldName: String): MediaFileRO {
+        val resolvedCreator = mediaFileCreatorResolver?.resolve()
+        val mediaFile = mediaFileHandler.uploadAndAssociateFile(file, alias, description, entityId, entityName, fieldName, resolvedCreator?.objectId, resolvedCreator?.objectType)
         return crudHandler.getRO(mediaFile, MediaFileRO::class.java)
     }
 
@@ -46,15 +52,6 @@ class MediaFileServiceImpl(
         } catch(e: MediaFileNotFoundByUuidException) {
             response.status = HttpStatus.NOT_FOUND.value()
         }
-    }
-
-    private fun hasAccessToMediaFile(mediaFile: MediaFile, currentUserId: Long?): Boolean {
-        return true
-//        return when(mediaFile.aclMode) {
-//            MediaFileAclMode.PRIVATE -> mediaFile.objectId == currentUserId
-//            MediaFileAclMode.LOGGED_IN -> currentUserId != null
-//            MediaFileAclMode.PUBLIC -> true
-//        }
     }
 
     private fun getContentTypeFromExtension(extension: String): String? {
