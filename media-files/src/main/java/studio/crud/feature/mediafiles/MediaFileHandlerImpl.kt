@@ -19,6 +19,7 @@ import studio.crud.feature.mediafiles.exception.MediaFileLocationUnavailableExce
 import studio.crud.feature.mediafiles.exception.MediaFileNotFoundByUuidException
 import studio.crud.feature.mediafiles.model.MediaFile
 import studio.crud.feature.mediafiles.storage.MediaFileStorageProvider
+import studio.crud.sharedcommon.crud.executeSingleOrNull
 import studio.crud.sharedcommon.extentions.toDoubleBase64ForUrls
 import java.util.*
 
@@ -53,7 +54,7 @@ class MediaFileHandlerImpl(
     override fun uploadAndAssociateFile(file: MultipartFile, alias: String?, description: String?, entityId: Long, entityName: String, fieldName: String, creatorObjectId: Long?, creatorObjectType: String?): MediaFile {
         val metadata = mediaFileEntityFieldResolver.getFieldMetadata(entityName, fieldName)
         val extension = FilenameUtils.getExtension(file.originalFilename)
-        if(extension !in metadata.annotation.allowedExtensions) {
+        if(metadata.annotation.allowedExtensions.isNotEmpty() && extension !in metadata.annotation.allowedExtensions) {
             throw UnauthorizedFileExtensionException(extension, metadata.annotation.allowedExtensions.toSet())
         }
 
@@ -66,7 +67,7 @@ class MediaFileHandlerImpl(
                 metadata.field.set(it, uploadedMediaFile)
             })
                 // todo: enforceAccess
-            .execute() ?: throw MediaFileEntityNotFoundException(entityId, entityName)
+            .executeSingleOrNull() ?: throw MediaFileEntityNotFoundException(entityId, entityName)
         return uploadedMediaFile
     }
 
@@ -80,7 +81,7 @@ class MediaFileHandlerImpl(
                 metadata.field.set(it, null)
             })
             // todo: enforceAccess
-            .execute() ?: throw MediaFileEntityNotFoundException(entityId, entityName)
+            .executeSingleOrNull() ?: throw MediaFileEntityNotFoundException(entityId, entityName)
     }
 
     override fun downloadFile(mediaFile: MediaFile): ByteArray {
