@@ -25,7 +25,7 @@ class MediaFileServiceImpl(
     override fun uploadFile(file: MultipartFile, alias: String?, description: String?, aclMode: MediaFileAclMode): MediaFileRO {
         val resolvedCreator = currentEntityResolver?.resolve()
         val mediaFile = mediaFileHandler.uploadFile(file, alias, description, resolvedCreator?.objectId?.toLong(), resolvedCreator?.objectType, aclMode)
-        return crudHandler.getRO(mediaFile, MediaFileRO::class.java)
+        return crudHandler.fill(mediaFile, MediaFileRO::class.java)
     }
 
     override fun deleteAssociatedMediaFile(entityId: Long, entityName: String, fieldName: String) {
@@ -35,7 +35,7 @@ class MediaFileServiceImpl(
     override fun uploadAndAssociateFile(file: MultipartFile, alias: String?, description: String?, entityId: Long, entityName: String, fieldName: String): MediaFileRO {
         val resolvedCreator = currentEntityResolver?.resolve()
         val mediaFile = mediaFileHandler.uploadAndAssociateFile(file, alias, description, entityId, entityName, fieldName, resolvedCreator?.objectId?.toLong(), resolvedCreator?.objectType)
-        return crudHandler.getRO(mediaFile, MediaFileRO::class.java)
+        return crudHandler.fill(mediaFile, MediaFileRO::class.java)
     }
 
     override fun downloadFile(uuid: String, response: HttpServletResponse) {

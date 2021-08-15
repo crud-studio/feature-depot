@@ -20,7 +20,7 @@ class RemoteStorageServiceImpl(
     private val crudHandler: CrudHandler
 ): RemoteStorageService {
     override fun getValues(filter: DynamicModelFilter): List<RemoteStorageValueDTO> {
-        filter.setLimit<DynamicModelFilter>(SEARCH_LIMIT)
+        filter.limit = SEARCH_LIMIT
         return crudHandler
             .index(filter.withOwnerFilter(), RemoteStorageValue::class.java, RemoteStorageValueDTO::class.java)
             .execute()
@@ -28,7 +28,7 @@ class RemoteStorageServiceImpl(
     }
 
     override fun getValue(identifier: String): RemoteStorageValueDTO {
-        return crudHandler.getRO(getValueInternal(identifier), RemoteStorageValueDTO::class.java)
+        return crudHandler.fill(getValueInternal(identifier), RemoteStorageValueDTO::class.java)
     }
 
     override fun setValue(identifier: String, value: String): RemoteStorageValueDTO {
@@ -44,7 +44,7 @@ class RemoteStorageServiceImpl(
                 RemoteStorageValue(identifier, value, owner.objectId, owner.objectType)
             })
             .execute()
-        return crudHandler.getRO(remoteStorageValue, RemoteStorageValueDTO::class.java)
+        return crudHandler.fill(remoteStorageValue, RemoteStorageValueDTO::class.java)
     }
 
     override fun deleteValue(identifier: String) {

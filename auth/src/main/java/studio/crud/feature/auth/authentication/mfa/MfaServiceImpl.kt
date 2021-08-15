@@ -74,14 +74,14 @@ class MfaServiceImpl(private val crudHandler: CrudHandler,
             return
         }
         val existingMethod = getMfaMethodOrThrow(userInfo.internalId, mfaType)
-        methodHandler.issue(entity, crudHandler.getRO(existingMethod, CustomParamsDTO::class.java))
+        methodHandler.issue(entity, crudHandler.fill(existingMethod, CustomParamsDTO::class.java))
     }
 
     override fun validateCurrentToken(mfaType: MfaType, code: String, userInfo: UserInfo): String {
         val existingMethod = getMfaMethodOrThrow(userInfo.internalId, mfaType)
         val entity = entityHandler.getEntityById(userInfo.internalId)
         val methodHandler = getMfaProvider(mfaType)
-        methodHandler.validate(code, entity, crudHandler.getRO(existingMethod, CustomParamsDTO::class.java))
+        methodHandler.validate(code, entity, crudHandler.fill(existingMethod, CustomParamsDTO::class.java))
         val parsedToken = userInfo.parsedToken
         if(parsedToken.payload.passwordChangeRequired) {
             val newPayload = parsedToken.payload.copy(mfaRequired = false)
