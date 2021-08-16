@@ -1,5 +1,6 @@
 package studio.crud.feature.mediafiles.entityassociation.exception
 
+import studio.crud.feature.mediafiles.enums.MediaFileAclMode
 import studio.crud.sharedcommon.exception.core.ExceptionMetadata
 import studio.crud.sharedcommon.exception.core.ExceptionParam
 import studio.crud.sharedcommon.exception.core.ServerException
@@ -35,3 +36,11 @@ class MediaFileEntityNotFoundException(val entityId: Long, val entityName: Strin
     ]
 )
 class UnauthorizedFileExtensionException(val extension: String, val allowedExtensions: Set<String>) : ServerException("Not allowed to upload files of extensions [ $extension ] - Authorized extensions [ ${allowedExtensions.joinToString()} ]")
+
+@ExceptionMetadata(
+    params = [
+        ExceptionParam("incorrectAclMode"),
+        ExceptionParam("correctAclMode")
+    ]
+)
+class IncorrectFileAclModeException(val incorrectAclMode: MediaFileAclMode, val correctAclMode: MediaFileAclMode) : ServerException("Incorrect ACL mode [ $incorrectAclMode ] supplied. Should be [ $correctAclMode ]")

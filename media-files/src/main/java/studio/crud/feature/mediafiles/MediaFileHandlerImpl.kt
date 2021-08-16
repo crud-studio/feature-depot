@@ -10,12 +10,15 @@ import org.apache.commons.io.FilenameUtils
 import org.springframework.stereotype.Component
 import org.springframework.util.ReflectionUtils
 import org.springframework.web.multipart.MultipartFile
+import studio.crud.feature.mediafiles.entityassociation.MediaFileEntityFieldMetadata
 import studio.crud.feature.mediafiles.entityassociation.MediaFileEntityFieldResolver
+import studio.crud.feature.mediafiles.entityassociation.exception.IncorrectFileAclModeException
 import studio.crud.feature.mediafiles.entityassociation.exception.MediaFileEntityNotFoundException
 import studio.crud.feature.mediafiles.entityassociation.exception.UnauthorizedFileExtensionException
 import studio.crud.feature.mediafiles.enums.MediaFileAclMode
 import studio.crud.feature.mediafiles.enums.MediaFileStorageType
 import studio.crud.feature.mediafiles.exception.MediaFileLocationUnavailableException
+import studio.crud.feature.mediafiles.exception.MediaFileNotFoundByIdException
 import studio.crud.feature.mediafiles.exception.MediaFileNotFoundByUuidException
 import studio.crud.feature.mediafiles.model.MediaFile
 import studio.crud.feature.mediafiles.storage.MediaFileStorageProvider
@@ -53,22 +56,36 @@ class MediaFileHandlerImpl(
 
     override fun uploadAndAssociateFile(file: MultipartFile, alias: String?, description: String?, entityId: Long, entityName: String, fieldName: String, creatorObjectId: Long?, creatorObjectType: String?): MediaFile {
         val metadata = mediaFileEntityFieldResolver.getFieldMetadata(entityName, fieldName)
-        val extension = FilenameUtils.getExtension(file.originalFilename)
-        if(metadata.annotation.allowedExtensions.isNotEmpty() && extension !in metadata.annotation.allowedExtensions) {
-            throw UnauthorizedFileExtensionException(extension, metadata.annotation.allowedExtensions.toSet())
-        }
+        val uploadedMediaFile = uploadFile(file, alias, description, creatorObjectId, creatorObjectType, metadata.annotationData.aclMode)
+        associateMediaFile(uploadedMediaFile, entityId, entityName, fieldName)
+        return uploadedMediaFile
+    }
 
-        val uploadedMediaFile = uploadFile(file, alias, description, creatorObjectId, creatorObjectType, metadata.annotation.aclMode)
+    override fun associateMediaFile(mediaFile: MediaFile, entityId: Long, entityName: String, fieldName: String) {
+        val metadata = mediaFileEntityFieldResolver.getFieldMetadata(entityName, fieldName)
+        validateAssociation(mediaFile, metadata)
         crudHandler.updateByFilter(where {
             "id" Equal entityId
         }, metadata.entityClazz.java as Class<BaseCrudEntity<Long>>)
             .withOnHook(CRUDOnUpdateHook {
                 ReflectionUtils.makeAccessible(metadata.field)
-                metadata.field.set(it, uploadedMediaFile)
+                metadata.field.set(it, mediaFile)
             })
-                // todo: enforceAccess
+            // todo: enforceAccess
             .executeSingleOrNull() ?: throw MediaFileEntityNotFoundException(entityId, entityName)
-        return uploadedMediaFile
+    }
+
+    override fun validateAssociation(mediaFile: MediaFile, metadata: MediaFileEntityFieldMetadata) {
+        if(metadata.annotationData.allowedExtensions.isNotEmpty()) {
+            val extension = mediaFile.extension ?: throw UnauthorizedFileExtensionException("none", metadata.annotationData.allowedExtensions.toSet())
+            if(extension !in metadata.annotationData.allowedExtensions) {
+                throw UnauthorizedFileExtensionException(extension, metadata.annotationData.allowedExtensions.toSet())
+            }
+        }
+
+        if(mediaFile.aclMode != metadata.annotationData.aclMode) {
+            throw IncorrectFileAclModeException(mediaFile.aclMode, metadata.annotationData.aclMode)
+        }
     }
 
     override fun deleteAssociatedMediaFile(entityId: Long, entityName: String, fieldName: String) {
@@ -94,5 +111,10 @@ class MediaFileHandlerImpl(
             "uuid" Equal uuid
         }, MediaFile::class.java)
             .execute() ?: throw MediaFileNotFoundByUuidException(uuid)
+    }
+
+    override fun getMediaFileById(id: Long): MediaFile {
+        return crudHandler.show(id, MediaFile::class.java)
+            .execute() ?: throw MediaFileNotFoundByIdException(id)
     }
 }

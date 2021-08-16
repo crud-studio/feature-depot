@@ -46,7 +46,7 @@ class MediaFile(
      * Internal UUID
      */
     @MappedFields(
-        MappedField(transformerRef = "bla"),
+        MappedField(),
         MappedField(target = MinimalMediaFileRO::class)
     )
     @Column(name = "uuid", nullable = false, updatable = false)

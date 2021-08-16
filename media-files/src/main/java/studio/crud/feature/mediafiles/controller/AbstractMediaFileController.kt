@@ -25,7 +25,7 @@ abstract class AbstractMediaFileController<RO : MediaFileRO>:
         @RequestParam(value = "file") file: MultipartFile,
         @RequestParam(required = false) alias: String?,
         @RequestParam(required = false) description: String?,
-        @RequestParam(required = false) aclMode: MediaFileAclMode = MediaFileAclMode.PRIVATE
+        @RequestParam(required = false, defaultValue = "PRIVATE") aclMode: MediaFileAclMode
     ): ResponseEntity<ResultRO<*>> {
         return wrapResult {
             mediaFileService.uploadFile(

@@ -7,6 +7,7 @@ import studio.crud.feature.mediafiles.entityassociation.exception.MediaFileField
 import studio.crud.feature.mediafiles.entityassociation.exception.MediaFileFieldTypeNotMediaFileException
 import studio.crud.feature.mediafiles.model.MediaFile
 import studio.crud.sharedcommon.crud.jpa.model.AbstractJpaEntity
+import kotlin.reflect.KProperty
 
 @Component
 class MediaFileEntityFieldResolverImpl : MediaFileEntityFieldResolver {
@@ -30,12 +31,10 @@ class MediaFileEntityFieldResolverImpl : MediaFileEntityFieldResolver {
                         clazz.kotlin,
                         field.name,
                         field,
-                        field.getDeclaredAnnotation(MediaFileField::class.java)
+                        MediaFileFieldData(field.getDeclaredAnnotation(MediaFileField::class.java))
                     )
                 }
         }
-
-        println()
     }
 
     override fun getFieldMetadata(entityName: String, fieldName: String): MediaFileEntityFieldMetadata {

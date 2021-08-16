@@ -1,5 +1,6 @@
 package studio.crud.feature.mediafiles.exception
 
+import studio.crud.sharedcommon.exception.AbstractResourceNotFoundByIdException
 import studio.crud.sharedcommon.exception.AbstractResourceNotFoundByUuidException
 import studio.crud.sharedcommon.exception.core.ExceptionMetadata
 import studio.crud.sharedcommon.exception.core.ExceptionParam
@@ -32,6 +33,13 @@ class MediaFileLocationUnavailableException : ServerException("Cannot download: 
     ]
 )
 class MediaFileNotFoundByUuidException(val mediaFileUuid: String) : AbstractResourceNotFoundByUuidException(mediaFileUuid, "MediaFile")
+
+@ExceptionMetadata(
+    params = [
+        ExceptionParam("mediaFileId")
+    ]
+)
+class MediaFileNotFoundByIdException(val mediaFileId: Long) : AbstractResourceNotFoundByIdException(mediaFileId, "MediaFile")
 
 @ExceptionMetadata
 class MediaFileAccessDeniedException : ServerException("Access denied to Media File")
