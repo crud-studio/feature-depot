@@ -24,7 +24,7 @@ abstract class AbstractDashboardController: AbstractSimplifiedErrorHandlingJpaCr
 
     @RequestMapping("/data")
     fun getDashboardData(@RequestParam widgetIds: List<Long>): ResponseEntity<ResultRO<*>> {
-        return wrapResult { dashboardService.getDashboardData(widgetIds) }
+        return wrapResult { dashboardService.getDashboardData(widgetIds, accessorId(), accessorType()) }
     }
 
 }

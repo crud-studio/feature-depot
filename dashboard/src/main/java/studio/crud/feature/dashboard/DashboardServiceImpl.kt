@@ -12,15 +12,16 @@ class DashboardServiceImpl(
         val crudHandler: CrudHandler,
         val dashboardWidgetDataHandler: DashboardWidgetDataHandler
 ): DashboardService {
-    override fun getDashboardData(widgetIds: List<Long>): List<DashboardDataDTO<*>> {
-        val widgets = crudHandler.index(where {
+    override fun getDashboardData(widgetIds: List<Long>, accessorId: Long?, accessorType: Class<*>?): List<DashboardDataDTO<*>> {
+        val crudCall = crudHandler.index(where {
             "id" RequireIn widgetIds
         }, DashboardWidget::class.java)
 //                .enforceAccess(Operator::class.java, userInfo.internalId) todo
-                .execute()
-                .data
+        if(accessorId != null && accessorType != null) {
+            crudCall.enforceAccess(accessorType, accessorId)
+        }
 
-        return widgets.map {
+        return crudCall.execute().data.map {
             DashboardDataDTO(it.id, it.type, it.titleKey, dashboardWidgetDataHandler.getWidgetData(it))
         }
     }
