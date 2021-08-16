@@ -16,7 +16,6 @@ create table dashboard_widget
     title_key        varchar(255) not null,
     type             varchar(255) not null,
     settings LONGTEXT,
-    grant_name varchar(255),
     primary key (id)
 );
 create table dashboard_widget_rel
