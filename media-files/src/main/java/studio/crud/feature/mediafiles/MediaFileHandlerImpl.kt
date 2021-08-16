@@ -33,7 +33,7 @@ class MediaFileHandlerImpl(
     private val crudHandler: CrudHandler
 ) : MediaFileHandler {
     @ComponentMap
-    private lateinit var additionalStorageProviders: Map<MediaFileStorageType, List<MediaFileStorageProvider>>
+    lateinit var additionalStorageProviders: Map<MediaFileStorageType, List<MediaFileStorageProvider>>
 
     override fun uploadFile(file: MultipartFile, alias: String?, description: String?, creatorObjectId: Long?, creatorObjectType: String?, aclMode: MediaFileAclMode): MediaFile {
         val fileUuid = UUID.randomUUID().toDoubleBase64ForUrls()
