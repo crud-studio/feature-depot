@@ -24,5 +24,6 @@
 		<module>trace-log</module>
 		<module>kubernetes</module>
 		<module>remote-storage</module>
+		<module>dashboard</module>
 	</modules>
 </project>
