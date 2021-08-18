@@ -66,7 +66,7 @@ class NexmoAuthenticationMethodHandlerImpl(
     }
 
     override fun doRegister(payload: NexmoAuthenticationPayloadDTO, params: CustomParamsDTO, entity: Entity): EntityAuthenticationMethod {
-        val fullTelephone = params.telephonePrefix + params.telephone
+        val fullTelephone = payload.telephonePrefix + payload.telephone
         val result = client.validateVerification(fullTelephone, payload.code!!)
         if(!result) {
             throw NexmoInvalidCodeException()
@@ -93,9 +93,5 @@ class NexmoAuthenticationMethodHandlerImpl(
             set(value) {
                 this.param2 = value
             }
-
-        private val CustomParamsDTO.telephonePrefix get() = this.param1
-
-        private val CustomParamsDTO.telephone get() = this.param2
     }
 }
