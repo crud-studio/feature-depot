@@ -16,6 +16,7 @@
 	</parent>
 
 	<modules>
+		<module>jpa</module>
 		<module>flyway</module>
 		<module>auth</module>
 		<module>parameters</module>
