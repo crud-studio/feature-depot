@@ -5,6 +5,7 @@ import org.springframework.context.annotation.Configuration
 import org.springframework.validation.Errors
 import studio.crud.feature.auth.config.properties.AUTHENTICATION_CONFIG_PREFIX
 import studio.crud.feature.auth.integrations.nexmo.NexmoBypassNumberPojo
+import studio.crud.feature.auth.integrations.nexmo.NexmoCodeLength
 import studio.crud.sharedcommon.config.ToggleableProperties
 
 @Configuration
@@ -13,6 +14,7 @@ class NexmoAuthenticationProperties: ToggleableProperties("Nexmo Authentication"
         var apiKey: String = ""
         var apiSecret: String = ""
         var brand: String = ""
+        var codeLength: NexmoCodeLength = NexmoCodeLength.LONG
         var bypassNumbers: Set<NexmoBypassNumberPojo> = emptySet()
 
         override fun validateOnEnabled(prefix: String, errors: Errors) {

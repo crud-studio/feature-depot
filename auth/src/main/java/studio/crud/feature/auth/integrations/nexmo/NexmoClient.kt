@@ -8,7 +8,7 @@ import studio.crud.feature.auth.exception.NexmoGeneralException
 import studio.crud.feature.auth.exception.NexmoRequestNotFoundException
 import java.util.*
 
-class NexmoClient(val apiKey: String, val apiSecret: String, val brand: String, val bypassNumbers:  Set<NexmoBypassNumberPojo> = emptySet()) {
+class NexmoClient(val apiKey: String, val apiSecret: String, val brand: String, val codeLength: NexmoCodeLength, val bypassNumbers:  Set<NexmoBypassNumberPojo> = emptySet()) {
     private val bypassNumberCache = mutableMapOf<String, NexmoBypassNumberPojo>()
     private val client = NexmoClient.Builder()
         .apiKey(apiKey)
@@ -32,7 +32,7 @@ class NexmoClient(val apiKey: String, val apiSecret: String, val brand: String, 
             request.pinExpiry = PIN_EXPIRY
             request.nextEventWait = NEXT_EVENT_WAIT
             request.workflow = VerifyRequest.Workflow.SMS_TTS
-            request.length = 6
+            request.length = codeLength.value
             val response = client.verifyClient.verify(request)
             if(response.status == VerifyStatus.ALREADY_REQUESTED) {
                 // In case we have a pending request that we don't know about - add it as a new request
