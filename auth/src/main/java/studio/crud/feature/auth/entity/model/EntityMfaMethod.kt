@@ -3,7 +3,7 @@ package studio.crud.feature.auth.entity.model
 import com.antelopesystem.crudframework.fieldmapper.annotation.MappedField
 import studio.crud.feature.auth.authentication.mfa.enums.MfaType
 import studio.crud.feature.auth.authentication.model.CustomParamsDTO
-import studio.crud.sharedcommon.crud.jpa.model.AbstractJpaUpdatableEntity
+import studio.crud.feature.jpa.model.AbstractJpaUpdatableEntity
 import javax.persistence.*
 import javax.persistence.Entity as JpaEntity
 

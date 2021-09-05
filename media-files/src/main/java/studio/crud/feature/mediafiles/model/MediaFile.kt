@@ -3,11 +3,11 @@ package studio.crud.feature.mediafiles.model
 import com.antelopesystem.crudframework.fieldmapper.annotation.DefaultMappingTarget
 import com.antelopesystem.crudframework.fieldmapper.annotation.MappedField
 import com.antelopesystem.crudframework.fieldmapper.annotation.MappedFields
+import studio.crud.feature.jpa.model.AbstractJpaUpdatableEntity
 import studio.crud.feature.mediafiles.enums.MediaFileAclMode
 import studio.crud.feature.mediafiles.enums.MediaFileStorageType
 import studio.crud.feature.mediafiles.ro.MediaFileRO
 import studio.crud.feature.mediafiles.ro.MinimalMediaFileRO
-import studio.crud.sharedcommon.crud.jpa.model.AbstractJpaUpdatableEntity
 import studio.crud.sharedcommon.extentions.toDoubleBase64ForUrls
 import java.util.*
 import javax.persistence.*

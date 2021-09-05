@@ -3,7 +3,7 @@ package studio.crud.feature.auth.authentication.model
 import com.antelopesystem.crudframework.crud.annotation.DeleteColumn
 import com.antelopesystem.crudframework.crud.annotation.Deleteable
 import studio.crud.feature.auth.entity.model.EntityAuthenticationMethod
-import studio.crud.sharedcommon.crud.jpa.model.AbstractJpaUpdatableEntity
+import studio.crud.feature.jpa.model.AbstractJpaUpdatableEntity
 import java.util.*
 import javax.persistence.*
 

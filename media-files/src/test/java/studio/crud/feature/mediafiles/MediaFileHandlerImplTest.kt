@@ -7,6 +7,7 @@ import org.junit.jupiter.api.Test
 import strikt.api.expectThat
 import strikt.api.expectThrows
 import strikt.assertions.isEqualTo
+import studio.crud.feature.jpa.model.AbstractJpaEntity
 import studio.crud.feature.mediafiles.entityassociation.MediaFileEntityFieldMetadata
 import studio.crud.feature.mediafiles.entityassociation.MediaFileFieldData
 import studio.crud.feature.mediafiles.entityassociation.exception.IncorrectFileAclModeException
@@ -16,7 +17,6 @@ import studio.crud.feature.mediafiles.enums.MediaFileStorageType
 import studio.crud.feature.mediafiles.exception.MediaFileLocationUnavailableException
 import studio.crud.feature.mediafiles.model.MediaFile
 import studio.crud.feature.mediafiles.storage.MediaFileStorageProvider
-import studio.crud.sharedcommon.crud.jpa.model.AbstractJpaEntity
 import kotlin.reflect.jvm.javaField
 
 internal class MediaFileHandlerImplTest {

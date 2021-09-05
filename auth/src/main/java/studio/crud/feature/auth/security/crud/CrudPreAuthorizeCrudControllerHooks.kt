@@ -1,5 +1,6 @@
 package studio.crud.feature.auth.security.crud
 
+import com.antelopesystem.crudframework.model.BaseCrudEntity
 import com.antelopesystem.crudframework.modelfilter.DynamicModelFilter
 import org.springframework.security.access.prepost.PreAuthorize
 import org.springframework.stereotype.Component
@@ -9,8 +10,6 @@ import studio.crud.feature.auth.security.crud.annotations.PreAuthorizeDelete
 import studio.crud.feature.auth.security.crud.annotations.PreAuthorizeRead
 import studio.crud.feature.auth.security.crud.annotations.PreAuthorizeUpdate
 import studio.crud.feature.auth.security.spring.SpringSecurityExpressionHandler
-import studio.crud.sharedcommon.crud.jpa.model.AbstractJpaEntity
-import studio.crud.sharedcommon.crud.jpa.ro.AbstractJpaRO
 import studio.crud.sharedcommon.web.hooks.GlobalCrudControllerHooks
 import kotlin.reflect.KClass
 import kotlin.reflect.full.findAnnotation
@@ -22,35 +21,36 @@ import kotlin.reflect.full.findAnnotation
 class CrudPreAuthorizeCrudControllerHooks(
     private val expressionHandler: SpringSecurityExpressionHandler
 ) : GlobalCrudControllerHooks {
-    override fun preShow(id: Long, controllerClazz: KClass<*>, entityClazz: KClass<AbstractJpaEntity>) {
+    override fun preShow(id: Long, controllerClazz: KClass<*>, entityClazz: KClass<out BaseCrudEntity<*>>) {
         validateSpringPreAuthorize(controllerClazz)
         validateExpression(
             controllerClazz.findAnnotation<PreAuthorizeRead>()?.value
         )
     }
 
-    override fun preSearch(filter: DynamicModelFilter?, controllerClazz: KClass<*>, entityClazz: KClass<AbstractJpaEntity>) {
+    override fun preSearch(filter: DynamicModelFilter?, controllerClazz: KClass<*>, entityClazz: KClass<out BaseCrudEntity<*>>) {
         validateSpringPreAuthorize(controllerClazz)
         validateExpression(
             controllerClazz.findAnnotation<PreAuthorizeRead>()?.value
         )
     }
 
-    override fun preCreate(ro: AbstractJpaRO, controllerClazz: KClass<*>, entityClazz: KClass<AbstractJpaEntity>) {
+
+    override fun preCreate(ro: Any, controllerClazz: KClass<*>, entityClazz: KClass<out BaseCrudEntity<*>>) {
         validateSpringPreAuthorize(controllerClazz)
         validateExpression(
             controllerClazz.findAnnotation<PreAuthorizeCreate>()?.value
         )
     }
 
-    override fun preUpdate(id: Long, ro: AbstractJpaRO, controllerClazz: KClass<*>, entityClazz: KClass<AbstractJpaEntity>) {
+    override fun preUpdate(id: Long, ro: Any, controllerClazz: KClass<*>, entityClazz: KClass<out BaseCrudEntity<*>>) {
         validateSpringPreAuthorize(controllerClazz)
         validateExpression(
             controllerClazz.findAnnotation<PreAuthorizeUpdate>()?.value
         )
     }
 
-    override fun preDelete(id: Long, controllerClazz: KClass<*>, entityClazz: KClass<AbstractJpaEntity>) {
+    override fun preDelete(id: Long, controllerClazz: KClass<*>, entityClazz: KClass<out BaseCrudEntity<*>>) {
         validateSpringPreAuthorize(controllerClazz)
         validateExpression(
             controllerClazz.findAnnotation<PreAuthorizeDelete>()?.value

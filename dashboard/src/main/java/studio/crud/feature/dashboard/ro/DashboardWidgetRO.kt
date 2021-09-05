@@ -1,7 +1,7 @@
 package studio.crud.feature.dashboard.ro
 
 import studio.crud.feature.dashboard.enums.DashboardWidgetType
-import studio.crud.sharedcommon.crud.jpa.ro.AbstractJpaUpdatableRO
+import studio.crud.feature.jpa.ro.AbstractJpaUpdatableRO
 
 class DashboardWidgetRO(
         var titleKey: String,

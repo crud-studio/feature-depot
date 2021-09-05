@@ -1,6 +1,6 @@
 package studio.crud.feature.auth.token.metadata.model
 
-import studio.crud.sharedcommon.crud.jpa.model.AbstractJpaUpdatableEntity
+import studio.crud.feature.jpa.model.AbstractJpaUpdatableEntity
 import javax.persistence.Column
 import javax.persistence.Entity
 import javax.persistence.Table

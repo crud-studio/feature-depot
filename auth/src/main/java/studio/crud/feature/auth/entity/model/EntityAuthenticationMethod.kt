@@ -1,7 +1,7 @@
 package studio.crud.feature.auth.entity.model
 
 import studio.crud.feature.auth.authentication.method.enums.AuthenticationMethodType
-import studio.crud.sharedcommon.crud.jpa.model.AbstractJpaUpdatableEntity
+import studio.crud.feature.jpa.model.AbstractJpaUpdatableEntity
 import javax.persistence.*
 
 @javax.persistence.Entity

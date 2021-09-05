@@ -6,7 +6,7 @@ import com.antelopesystem.crudframework.fieldmapper.annotation.MappedField
 import org.hibernate.annotations.Type
 import studio.crud.feature.dashboard.enums.DashboardWidgetType
 import studio.crud.feature.dashboard.ro.DashboardWidgetRO
-import studio.crud.sharedcommon.crud.jpa.model.AbstractJpaUpdatableEntity
+import studio.crud.feature.jpa.model.AbstractJpaUpdatableEntity
 import javax.persistence.*
 
 @Entity

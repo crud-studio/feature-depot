@@ -5,7 +5,7 @@ import com.antelopesystem.crudframework.fieldmapper.annotation.MappedField
 import org.hibernate.annotations.Type
 import studio.crud.feature.dashboard.ro.DashboardWidgetRelRO
 import studio.crud.feature.dashboard.ro.WidthDTO
-import studio.crud.sharedcommon.crud.jpa.model.AbstractJpaUpdatableEntity
+import studio.crud.feature.jpa.model.AbstractJpaUpdatableEntity
 import studio.crud.sharedcommon.crud.transformer.MappingTransformer
 import javax.persistence.*
 

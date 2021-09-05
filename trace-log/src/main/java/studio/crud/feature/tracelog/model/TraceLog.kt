@@ -1,6 +1,6 @@
 package studio.crud.feature.tracelog.model
 
-import studio.crud.sharedcommon.crud.jpa.model.AbstractJpaEntity
+import studio.crud.feature.jpa.model.AbstractJpaEntity
 import javax.persistence.Column
 import javax.persistence.Entity
 import javax.persistence.Table

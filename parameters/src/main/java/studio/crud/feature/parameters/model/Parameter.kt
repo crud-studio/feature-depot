@@ -4,8 +4,8 @@ import com.antelopesystem.crudframework.crud.annotation.CachedBy
 import com.antelopesystem.crudframework.crud.annotation.Deleteable
 import com.antelopesystem.crudframework.fieldmapper.annotation.DefaultMappingTarget
 import com.antelopesystem.crudframework.fieldmapper.annotation.MappedField
+import studio.crud.feature.jpa.model.AbstractJpaUpdatableEntity
 import studio.crud.feature.parameters.enums.ParameterType
-import studio.crud.sharedcommon.crud.jpa.model.AbstractJpaUpdatableEntity
 import studio.crud.feature.parameters.ro.ParameterRO
 import javax.persistence.*
 

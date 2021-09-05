@@ -2,7 +2,7 @@ package studio.crud.feature.auth.entity.model
 
 import org.hibernate.annotations.Fetch
 import org.hibernate.annotations.FetchMode
-import studio.crud.sharedcommon.crud.jpa.model.AbstractJpaUpdatableEntity
+import studio.crud.feature.jpa.model.AbstractJpaUpdatableEntity
 import java.util.*
 import javax.persistence.*
 import javax.persistence.Entity

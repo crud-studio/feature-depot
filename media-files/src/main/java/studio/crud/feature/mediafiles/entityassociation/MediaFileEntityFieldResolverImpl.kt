@@ -1,13 +1,12 @@
 package studio.crud.feature.mediafiles.entityassociation
 
+import com.antelopesystem.crudframework.model.BaseCrudEntity
 import org.reflections.Reflections
 import org.springframework.stereotype.Component
 import studio.crud.feature.mediafiles.entityassociation.annotation.MediaFileField
 import studio.crud.feature.mediafiles.entityassociation.exception.MediaFileFieldNotFoundException
 import studio.crud.feature.mediafiles.entityassociation.exception.MediaFileFieldTypeNotMediaFileException
 import studio.crud.feature.mediafiles.model.MediaFile
-import studio.crud.sharedcommon.crud.jpa.model.AbstractJpaEntity
-import kotlin.reflect.KProperty
 
 @Component
 class MediaFileEntityFieldResolverImpl : MediaFileEntityFieldResolver {
@@ -18,7 +17,7 @@ class MediaFileEntityFieldResolverImpl : MediaFileEntityFieldResolver {
 
     init {
         val reflections = Reflections("studio.crud")
-        mediaFileEntityFieldMetadatas = reflections.getSubTypesOf(AbstractJpaEntity::class.java).flatMap { clazz ->
+        mediaFileEntityFieldMetadatas = reflections.getSubTypesOf(BaseCrudEntity::class.java).flatMap { clazz ->
             clazz.declaredFields
                 .filter { field -> field.isAnnotationPresent(MediaFileField::class.java) }
                 .map { field ->

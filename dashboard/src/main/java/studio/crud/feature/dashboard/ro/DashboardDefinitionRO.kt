@@ -1,6 +1,7 @@
 package studio.crud.feature.dashboard.ro
 
-import studio.crud.sharedcommon.crud.jpa.ro.AbstractJpaUpdatableRO
+import studio.crud.feature.jpa.ro.AbstractJpaUpdatableRO
+
 
 open class DashboardDefinitionRO(
         var titleKey: String,
