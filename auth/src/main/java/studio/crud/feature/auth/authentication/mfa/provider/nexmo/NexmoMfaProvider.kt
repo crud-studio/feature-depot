@@ -18,7 +18,7 @@ import kotlin.reflect.KClass
 class NexmoMfaProvider(
     private val properties: NexmoMfaProperties
 ): MfaProvider<NexmoMfaPayloadDTO> {
-    private val client by lazy { NexmoClient(properties.apiKey, properties.apiSecret, properties.brand) }
+    private val client by lazy { NexmoClient(properties.apiKey, properties.apiSecret, properties.brand, properties.bypassNumbers) }
     override val type: MfaType = MfaType.Nexmo
     override val payloadType: KClass<NexmoMfaPayloadDTO> = NexmoMfaPayloadDTO::class
 

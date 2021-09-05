@@ -4,6 +4,7 @@ import org.springframework.boot.context.properties.ConfigurationProperties
 import org.springframework.context.annotation.Configuration
 import org.springframework.validation.Errors
 import studio.crud.feature.auth.config.properties.MFA_CONFIG_PREFIX
+import studio.crud.feature.auth.integrations.nexmo.NexmoBypassNumberPojo
 import studio.crud.sharedcommon.config.ToggleableProperties
 
 @Configuration
@@ -12,6 +13,7 @@ class NexmoMfaProperties: ToggleableProperties("Nexmo MFA") {
         var apiKey: String = ""
         var apiSecret: String = ""
         var brand: String = ""
+        var bypassNumbers: Set<NexmoBypassNumberPojo> = emptySet()
 
         override fun validateOnEnabled(prefix: String, errors: Errors) {
                 if(apiKey.isBlank()) {

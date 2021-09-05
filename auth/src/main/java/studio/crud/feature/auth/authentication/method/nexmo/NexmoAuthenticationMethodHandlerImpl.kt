@@ -21,7 +21,7 @@ class NexmoAuthenticationMethodHandlerImpl(
         private val crudHandler: CrudHandler,
         private val properties: NexmoAuthenticationProperties
 ) : AuthenticationMethodHandler<NexmoAuthenticationPayloadDTO> {
-    private val client by lazy { NexmoClient(properties.apiKey, properties.apiSecret, properties.brand) }
+    private val client by lazy { NexmoClient(properties.apiKey, properties.apiSecret, properties.brand, properties.bypassNumbers) }
 
     override val methodType: AuthenticationMethodType = AuthenticationMethodType.Nexmo
 
