@@ -26,7 +26,7 @@ class TempFileMediaFileStorageProvider(
             file.transferTo(tempFile)
             return RemoteFileMetadataPojo(
                 tempFile.name,
-                tempFile.totalSpace,
+                tempFile.length(),
                 location
             )
         } catch (e: Exception) {

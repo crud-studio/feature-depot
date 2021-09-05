@@ -7,6 +7,7 @@ import com.antelopesystem.crudframework.modelfilter.dsl.where
 import com.antelopesystem.crudframework.utils.component.componentmap.annotation.ComponentMap
 import org.apache.commons.codec.digest.DigestUtils
 import org.apache.commons.io.FilenameUtils
+import org.springframework.beans.factory.annotation.Autowired
 import org.springframework.stereotype.Component
 import org.springframework.util.ReflectionUtils
 import org.springframework.web.multipart.MultipartFile
@@ -20,6 +21,7 @@ import studio.crud.feature.mediafiles.enums.MediaFileStorageType
 import studio.crud.feature.mediafiles.exception.MediaFileLocationUnavailableException
 import studio.crud.feature.mediafiles.exception.MediaFileNotFoundByIdException
 import studio.crud.feature.mediafiles.exception.MediaFileNotFoundByUuidException
+import studio.crud.feature.mediafiles.hooks.MediaFileAssociationHooks
 import studio.crud.feature.mediafiles.model.MediaFile
 import studio.crud.feature.mediafiles.storage.MediaFileStorageProvider
 import studio.crud.sharedcommon.crud.executeSingleOrNull
@@ -30,7 +32,9 @@ import java.util.*
 class MediaFileHandlerImpl(
     private val primaryStorageProvider: MediaFileStorageProvider,
     private val mediaFileEntityFieldResolver: MediaFileEntityFieldResolver,
-    private val crudHandler: CrudHandler
+    private val crudHandler: CrudHandler,
+    @Autowired(required = false)
+    private val mediaFileAssociationHooks: List<MediaFileAssociationHooks> = emptyList()
 ) : MediaFileHandler {
     @ComponentMap
     lateinit var additionalStorageProviders: Map<MediaFileStorageType, List<MediaFileStorageProvider>>
@@ -64,6 +68,11 @@ class MediaFileHandlerImpl(
     override fun associateMediaFile(mediaFile: MediaFile, entityId: Long, entityName: String, fieldName: String) {
         val metadata = mediaFileEntityFieldResolver.getFieldMetadata(entityName, fieldName)
         validateAssociation(mediaFile, metadata)
+        mediaFileAssociationHooks.forEach {
+            if(it.entityClazz == metadata.entityClazz) {
+                it.preAssociation(mediaFile, entityId, metadata)
+            }
+        }
         crudHandler.updateByFilter(where {
             "id" Equal entityId
         }, metadata.entityClazz.java as Class<BaseCrudEntity<Long>>)
@@ -90,6 +99,11 @@ class MediaFileHandlerImpl(
 
     override fun deleteAssociatedMediaFile(entityId: Long, entityName: String, fieldName: String) {
         val metadata = mediaFileEntityFieldResolver.getFieldMetadata(entityName, fieldName)
+        mediaFileAssociationHooks.forEach {
+            if(it.entityClazz == metadata.entityClazz) {
+                it.preDeleteAssociation(entityId, metadata)
+            }
+        }
         crudHandler.updateByFilter(where {
             "id" Equal entityId
         }, metadata.entityClazz.java as Class<BaseCrudEntity<Long>>)
