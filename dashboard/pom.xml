@@ -22,6 +22,12 @@
             <groupId>studio.crud</groupId>
             <artifactId>shared-common</artifactId>
         </dependency>
+
+        <dependency>
+            <groupId>studio.crud.feature</groupId>
+            <artifactId>jpa</artifactId>
+        </dependency>
+
         <dependency>
             <groupId>studio.crud.feature</groupId>
             <artifactId>flyway</artifactId>
