@@ -2,9 +2,9 @@ package studio.crud.feature.mediafiles.exception
 
 import studio.crud.sharedcommon.exception.AbstractResourceNotFoundByIdException
 import studio.crud.sharedcommon.exception.AbstractResourceNotFoundByUuidException
-import studio.crud.sharedcommon.exception.core.ExceptionMetadata
-import studio.crud.sharedcommon.exception.core.ExceptionParam
-import studio.crud.sharedcommon.exception.core.ServerException
+import studio.crud.feature.exceptionhandling.core.ExceptionMetadata
+import studio.crud.feature.exceptionhandling.core.ExceptionParam
+import studio.crud.feature.exceptionhandling.core.ServerException
 
 @ExceptionMetadata(
     params = [
@@ -21,7 +21,7 @@ class MediaFileUploadFailedException(val reason: String? = "N/A") : ServerExcept
         ]
 )
 class MediaFileDownloadFailedException(val reason: String? = "N/A") : ServerException(
-        "Media File download failed - $reason"
+    "Media File download failed - $reason"
 )
 
 @ExceptionMetadata

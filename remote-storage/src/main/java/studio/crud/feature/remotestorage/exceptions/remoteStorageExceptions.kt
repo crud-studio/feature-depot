@@ -2,9 +2,9 @@ package studio.crud.feature.remotestorage.exceptions
 
 import studio.crud.feature.remotestorage.model.RemoteStorageValue
 import studio.crud.sharedcommon.exception.AbstractResourceNotFoundByFieldException
-import studio.crud.sharedcommon.exception.core.ExceptionMetadata
-import studio.crud.sharedcommon.exception.core.ExceptionParam
-import studio.crud.sharedcommon.exception.core.ServerException
+import studio.crud.feature.exceptionhandling.core.ExceptionMetadata
+import studio.crud.feature.exceptionhandling.core.ExceptionParam
+import studio.crud.feature.exceptionhandling.core.ServerException
 
 @ExceptionMetadata
 class CouldNotDetermineValueOwnerException : ServerException("Could not determine value owner")

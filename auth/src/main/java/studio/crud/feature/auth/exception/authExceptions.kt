@@ -5,9 +5,9 @@ import studio.crud.feature.auth.authentication.mfa.enums.MfaType
 import studio.crud.feature.auth.entity.model.Entity
 import studio.crud.sharedcommon.exception.AbstractResourceNotFoundByIdException
 import studio.crud.sharedcommon.exception.SecurityException
-import studio.crud.sharedcommon.exception.core.ExceptionMetadata
-import studio.crud.sharedcommon.exception.core.ExceptionParam
-import studio.crud.sharedcommon.exception.core.ServerException
+import studio.crud.feature.exceptionhandling.core.ExceptionMetadata
+import studio.crud.feature.exceptionhandling.core.ExceptionParam
+import studio.crud.feature.exceptionhandling.core.ServerException
 
 @ExceptionMetadata
 class EntityNotFoundException : ServerException("Entity not found")

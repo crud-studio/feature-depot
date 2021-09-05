@@ -1,9 +1,9 @@
 package studio.crud.feature.mediafiles.entityassociation.exception
 
 import studio.crud.feature.mediafiles.enums.MediaFileAclMode
-import studio.crud.sharedcommon.exception.core.ExceptionMetadata
-import studio.crud.sharedcommon.exception.core.ExceptionParam
-import studio.crud.sharedcommon.exception.core.ServerException
+import studio.crud.feature.exceptionhandling.core.ExceptionMetadata
+import studio.crud.feature.exceptionhandling.core.ExceptionParam
+import studio.crud.feature.exceptionhandling.core.ServerException
 
 @ExceptionMetadata(
     params = [
