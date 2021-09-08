@@ -15,6 +15,8 @@ abstract class InternalException(message: String) : ServerException(message) {
     }
 }
 
+abstract class SystemConfigurationException(message: String): InternalException(message)
+
 abstract class SecurityException(message: String) : ServerException(message)
 
 abstract class AbstractResourceFetchFailedException(resourceType: String, reason: String) : ServerException("Cannot fetch $resourceType. Reason: $reason")

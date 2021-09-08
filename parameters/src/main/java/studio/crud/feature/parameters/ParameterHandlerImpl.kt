@@ -3,9 +3,9 @@ package studio.crud.feature.parameters
 import com.antelopesystem.crudframework.crud.handler.CrudHandler
 import com.antelopesystem.crudframework.modelfilter.dsl.where
 import org.springframework.stereotype.Component
+import studio.crud.feature.parameters.exception.ParameterMisconfiguredException
+import studio.crud.feature.parameters.exception.ParameterNotConfiguredException
 import studio.crud.feature.parameters.model.Parameter
-import studio.crud.sharedcommon.exception.ParameterMisconfiguredException
-import studio.crud.sharedcommon.exception.ParameterNotConfiguredException
 
 /**
  * {@inheritDoc}

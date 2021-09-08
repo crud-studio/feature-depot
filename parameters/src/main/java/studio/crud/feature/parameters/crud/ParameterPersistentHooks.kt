@@ -7,9 +7,9 @@ import com.antelopesystem.crudframework.crud.hooks.interfaces.UpdateHooks
 import net.sf.ehcache.Cache
 import net.sf.ehcache.CacheManager
 import org.springframework.stereotype.Component
-import studio.crud.sharedcommon.exception.InvalidParameterTypeException
-import studio.crud.sharedcommon.exception.InvalidParameterValueException
 import studio.crud.feature.parameters.enums.ParameterType
+import studio.crud.feature.parameters.exception.InvalidParameterTypeException
+import studio.crud.feature.parameters.exception.InvalidParameterValueException
 import studio.crud.feature.parameters.model.Parameter
 import javax.annotation.PostConstruct
 
