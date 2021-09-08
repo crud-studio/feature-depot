@@ -6,7 +6,7 @@ import com.antelopesystem.crudframework.utils.component.componentmap.annotation.
 import studio.crud.feature.auth.entity.model.Entity
 import studio.crud.feature.auth.authentication.rules.action.base.RuleActionHandler
 import studio.crud.feature.auth.authentication.rules.anomaly.base.DeviceAnomalyHandler
-import studio.crud.sharedcommon.audit.RequestSecurityMetadata
+import studio.crud.feature.audit.RequestSecurityMetadata
 import org.springframework.stereotype.Component
 
 @Component

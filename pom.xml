@@ -28,6 +28,7 @@
 		<module>remote-storage</module>
 		<module>dashboard</module>
 		<module>exception-handling</module>
+		<module>audit</module>
 	</modules>
 
 	<dependencies>

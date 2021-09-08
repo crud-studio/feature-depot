@@ -30,6 +30,11 @@
 
 		<dependency>
 			<groupId>studio.crud.feature</groupId>
+			<artifactId>audit</artifactId>
+		</dependency>
+
+		<dependency>
+			<groupId>studio.crud.feature</groupId>
 			<artifactId>flyway</artifactId>
 		</dependency>
 
