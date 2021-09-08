@@ -17,6 +17,7 @@ jobs:
       - run:
           name: Test JAR
           command: |
+            mvn -f bom/pom.xml install
             mvn test
       - run:
           name: Save test results
