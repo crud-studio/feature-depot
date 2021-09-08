@@ -1,4 +1,4 @@
-package studio.crud.feature.audit
+package studio.crud.feature.core.audit
 
 interface RequestSecurityMetadataProvider {
     fun get(): RequestSecurityMetadata

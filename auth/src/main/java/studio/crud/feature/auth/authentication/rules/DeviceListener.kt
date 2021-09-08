@@ -1,7 +1,7 @@
 package studio.crud.feature.auth.authentication.rules
 
 import org.springframework.stereotype.Component
-import studio.crud.feature.audit.RequestSecurityMetadata
+import studio.crud.feature.core.audit.RequestSecurityMetadata
 import studio.crud.feature.auth.authentication.device.EntityDeviceHandler
 import studio.crud.feature.auth.authentication.device.model.EntityDevice
 import studio.crud.feature.auth.authentication.notifier.listener.LoginListener

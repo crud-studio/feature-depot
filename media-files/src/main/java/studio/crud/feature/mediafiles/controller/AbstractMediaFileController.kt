@@ -10,7 +10,7 @@ import studio.crud.feature.mediafiles.model.MediaFile
 import studio.crud.feature.mediafiles.ro.MediaFileRO
 import studio.crud.sharedcommon.crud.web.annotations.CrudOperations
 import studio.crud.sharedcommon.web.controller.AbstractSimplifiedErrorHandlingJpaCrudController
-import studio.crud.sharedcommon.web.ro.ResultRO
+import studio.crud.feature.core.web.model.ResultRO
 import javax.servlet.http.HttpServletResponse
 
 @CrudOperations(create = false, update = false, delete = false)

@@ -1,4 +1,4 @@
-package studio.crud.feature.audit.geoip
+package studio.crud.feature.core.audit.geoip
 
 interface GeoIpResolver {
     fun getCountryIso(ip: String): String

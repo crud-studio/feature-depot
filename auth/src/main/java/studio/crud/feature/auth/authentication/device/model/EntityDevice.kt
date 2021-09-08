@@ -1,6 +1,6 @@
 package studio.crud.feature.auth.authentication.device.model
 
-import studio.crud.feature.audit.RequestSecurityMetadata
+import studio.crud.feature.core.audit.RequestSecurityMetadata
 import studio.crud.feature.auth.authentication.device.enums.DeviceStatus
 import studio.crud.feature.auth.util.hashSHA256
 import java.io.Serializable

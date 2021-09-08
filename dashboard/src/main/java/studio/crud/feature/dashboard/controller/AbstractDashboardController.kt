@@ -9,7 +9,7 @@ import studio.crud.feature.dashboard.model.DashboardDefinition
 import studio.crud.feature.dashboard.ro.DashboardDefinitionRO
 import studio.crud.sharedcommon.crud.web.annotations.CrudOperations
 import studio.crud.sharedcommon.web.controller.AbstractSimplifiedErrorHandlingJpaCrudController
-import studio.crud.sharedcommon.web.ro.ResultRO
+import studio.crud.feature.core.web.model.ResultRO
 
 @CrudOperations(
     update = false,

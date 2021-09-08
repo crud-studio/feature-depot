@@ -6,7 +6,7 @@ import org.springframework.http.ResponseEntity
 import org.springframework.web.bind.annotation.*
 import studio.crud.feature.remotestorage.RemoteStorageService
 import studio.crud.sharedcommon.web.controller.AbstractErrorHandlingController
-import studio.crud.sharedcommon.web.ro.ResultRO
+import studio.crud.feature.core.web.model.ResultRO
 
 abstract class AbstractRemoteStorageController : AbstractErrorHandlingController() {
     @Autowired

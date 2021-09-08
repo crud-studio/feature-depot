@@ -1,4 +1,4 @@
-package studio.crud.feature.audit.config
+package studio.crud.feature.core.audit.config
 
 import org.springframework.boot.context.properties.ConfigurationProperties
 import org.springframework.context.annotation.Configuration

@@ -140,3 +140,6 @@ class PayloadDeserializationException(val payload: String?, val payloadType: KCl
     ]
 )
 class PayloadValidationException(val violations: List<KeyValuePair<String, String>>) : ServerException("Payload validation failed - ${violations.map { it.toPrettyString() }.joinToString(",")}")
+
+@ExceptionMetadata
+class UnauthorizedException : SecurityException("Unauthorized")

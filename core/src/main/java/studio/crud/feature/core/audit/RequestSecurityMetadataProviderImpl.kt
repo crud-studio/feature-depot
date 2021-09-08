@@ -1,11 +1,11 @@
-package studio.crud.feature.audit
+package studio.crud.feature.core.audit
 
 import org.springframework.beans.factory.annotation.Autowired
 import org.springframework.stereotype.Component
-import studio.crud.feature.audit.geoip.DefaultGeoIpResolver
-import studio.crud.feature.audit.geoip.GeoIpResolver
-import studio.crud.feature.audit.hostname.DefaultHostnameResolver
-import studio.crud.feature.audit.hostname.HostnameResolver
+import studio.crud.feature.core.audit.geoip.DefaultGeoIpResolver
+import studio.crud.feature.core.audit.geoip.GeoIpResolver
+import studio.crud.feature.core.audit.hostname.DefaultHostnameResolver
+import studio.crud.feature.core.audit.hostname.HostnameResolver
 import javax.servlet.http.HttpServletRequest
 
 @Component

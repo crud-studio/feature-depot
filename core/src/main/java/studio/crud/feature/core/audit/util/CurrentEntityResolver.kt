@@ -1,4 +1,4 @@
-package studio.crud.feature.audit.util
+package studio.crud.feature.core.audit.util
 
 interface CurrentEntityResolver {
     /**

@@ -1,4 +1,4 @@
-package studio.crud.feature.audit.hostname
+package studio.crud.feature.core.audit.hostname
 
 import java.net.InetAddress
 

@@ -1,14 +1,8 @@
-package studio.crud.feature.audit
+package studio.crud.feature.core.audit
 
-import studio.crud.feature.audit.geoip.GeoIpResolver
-import studio.crud.feature.audit.hostname.HostnameResolver
-import studio.crud.feature.audit.util.getCountryIso
-import studio.crud.feature.audit.util.getFingerprint
-import studio.crud.feature.audit.util.getHostname
-import studio.crud.feature.audit.util.requestId
-import studio.crud.feature.core.util.getIpAddress
-import studio.crud.feature.core.util.getUserAgent
-import studio.crud.feature.core.util.getXForwardedForValue
+import studio.crud.feature.core.audit.geoip.GeoIpResolver
+import studio.crud.feature.core.audit.hostname.HostnameResolver
+import studio.crud.feature.core.util.*
 import java.io.Serializable
 import java.util.*
 import javax.servlet.http.HttpServletRequest

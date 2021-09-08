@@ -6,7 +6,7 @@ import org.springframework.security.core.AuthenticationException
 import org.springframework.security.web.AuthenticationEntryPoint
 import org.springframework.stereotype.Component
 import studio.crud.feature.auth.exception.InvalidTokenException
-import studio.crud.sharedcommon.web.ClientExceptionTransformer
+import studio.crud.feature.core.exception.ClientExceptionTransformer
 import javax.servlet.http.HttpServletRequest
 import javax.servlet.http.HttpServletResponse
 

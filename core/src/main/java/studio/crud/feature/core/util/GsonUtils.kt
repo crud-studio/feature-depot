@@ -9,6 +9,7 @@ import studio.crud.feature.core.exception.PayloadValidationException
 import studio.crud.feature.core.gson.DateLongFormatTypeAdapter
 import studio.crud.feature.core.gson.NullableTypAdapterFactory
 import java.util.*
+import javax.validation.Validation
 import kotlin.reflect.KClass
 import kotlin.reflect.full.createInstance
 

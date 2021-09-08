@@ -1,4 +1,4 @@
-package studio.crud.feature.audit.geoip
+package studio.crud.feature.core.audit.geoip
 
 import com.maxmind.geoip2.DatabaseReader
 import kotlinx.coroutines.GlobalScope
@@ -12,7 +12,7 @@ import org.springframework.boot.autoconfigure.condition.ConditionalOnProperty
 import org.springframework.core.io.ClassPathResource
 import org.springframework.core.io.Resource
 import org.springframework.stereotype.Component
-import studio.crud.feature.audit.config.MaxmindProperties
+import studio.crud.feature.core.audit.config.MaxmindProperties
 import java.net.InetAddress
 
 @ConditionalOnProperty("${MaxmindProperties.PREFIX}.enabled", havingValue = "true")
