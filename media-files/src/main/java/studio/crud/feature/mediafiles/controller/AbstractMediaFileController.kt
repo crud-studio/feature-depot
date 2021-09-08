@@ -4,13 +4,13 @@ import org.springframework.beans.factory.annotation.Autowired
 import org.springframework.http.ResponseEntity
 import org.springframework.web.bind.annotation.*
 import org.springframework.web.multipart.MultipartFile
+import studio.crud.feature.core.web.annotations.CrudOperations
+import studio.crud.feature.core.web.controller.AbstractSimplifiedErrorHandlingJpaCrudController
+import studio.crud.feature.core.web.model.ResultRO
 import studio.crud.feature.mediafiles.MediaFileService
 import studio.crud.feature.mediafiles.enums.MediaFileAclMode
 import studio.crud.feature.mediafiles.model.MediaFile
 import studio.crud.feature.mediafiles.ro.MediaFileRO
-import studio.crud.sharedcommon.crud.web.annotations.CrudOperations
-import studio.crud.sharedcommon.web.controller.AbstractSimplifiedErrorHandlingJpaCrudController
-import studio.crud.feature.core.web.model.ResultRO
 import javax.servlet.http.HttpServletResponse
 
 @CrudOperations(create = false, update = false, delete = false)

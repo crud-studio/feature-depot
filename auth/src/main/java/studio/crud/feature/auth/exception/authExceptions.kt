@@ -3,11 +3,10 @@ package studio.crud.feature.auth.exception
 import studio.crud.feature.auth.authentication.method.enums.AuthenticationMethodType
 import studio.crud.feature.auth.authentication.mfa.enums.MfaType
 import studio.crud.feature.auth.entity.model.Entity
+import studio.crud.feature.core.exception.AbstractResourceNotFoundByIdException
 import studio.crud.feature.core.exception.ServerException
 import studio.crud.feature.core.exception.annotation.ExceptionMetadata
 import studio.crud.feature.core.exception.annotation.ExceptionParam
-import studio.crud.sharedcommon.exception.AbstractResourceNotFoundByIdException
-import studio.crud.sharedcommon.exception.SecurityException
 
 @ExceptionMetadata
 class EntityNotFoundException : ServerException("Entity not found")

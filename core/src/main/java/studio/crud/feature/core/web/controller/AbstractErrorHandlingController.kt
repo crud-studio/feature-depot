@@ -36,18 +36,4 @@ abstract class AbstractErrorHandlingController {
 
         return ResponseEntity.ok(resultRO)
     }
-
-    fun wrapVoidResult(runnable: Runnable): ResponseEntity<ResultRO<*>> {
-        return wrapResult {
-            runnable.run()
-            null
-        }
-    }
-
-    fun wrapVoidResult(resultProvider: () -> Unit): ResponseEntity<ResultRO<*>> {
-        return wrapResult {
-            resultProvider()
-            null
-        }
-    }
 }

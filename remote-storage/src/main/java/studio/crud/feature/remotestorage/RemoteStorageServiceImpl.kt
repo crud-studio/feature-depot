@@ -6,11 +6,11 @@ import com.antelopesystem.crudframework.modelfilter.dsl.and
 import com.antelopesystem.crudframework.modelfilter.dsl.where
 import org.springframework.beans.factory.annotation.Autowired
 import org.springframework.stereotype.Service
+import studio.crud.feature.core.audit.util.CurrentEntityResolver
 import studio.crud.feature.remotestorage.exceptions.CouldNotDetermineValueOwnerException
 import studio.crud.feature.remotestorage.exceptions.RemoteStorageValueNotFoundByIdentifierException
 import studio.crud.feature.remotestorage.model.RemoteStorageValue
 import studio.crud.feature.remotestorage.ro.RemoteStorageValueDTO
-import studio.crud.sharedcommon.audit.util.CurrentEntityResolver
 import studio.crud.sharedcommon.crud.createOrUpdate
 
 @Service

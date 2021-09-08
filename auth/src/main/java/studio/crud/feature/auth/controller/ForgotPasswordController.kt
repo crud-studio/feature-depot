@@ -16,14 +16,14 @@ class ForgotPasswordController(
 ) : AbstractErrorHandlingController() {
     @PostMapping("/{methodType}")
     fun initializeForgotPassword(@PathVariable methodType: AuthenticationMethodType, @RequestBody(required = false) body: String = EMPTY_JSON_STRING, request: HttpServletRequest): ResponseEntity<ResultRO<*>> {
-        return wrapVoidResult {
+        return wrapResult {
             authenticationService.initializeForgotPassword(methodType, body)
         }
     }
 
     @PostMapping("/redeem/{token}")
     fun redeemForgotPasswordToken(@PathVariable token: String, @RequestParam newPassword: String): ResponseEntity<ResultRO<*>> {
-        return wrapVoidResult {
+        return wrapResult {
             authenticationService.redeemForgotPasswordToken(token, newPassword)
         }
     }

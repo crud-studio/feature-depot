@@ -10,7 +10,7 @@ import studio.crud.feature.auth.security.crud.annotations.PreAuthorizeDelete
 import studio.crud.feature.auth.security.crud.annotations.PreAuthorizeRead
 import studio.crud.feature.auth.security.crud.annotations.PreAuthorizeUpdate
 import studio.crud.feature.auth.security.spring.SpringSecurityExpressionHandler
-import studio.crud.sharedcommon.web.hooks.GlobalCrudControllerHooks
+import studio.crud.feature.core.web.hooks.GlobalCrudControllerHooks
 import kotlin.reflect.KClass
 import kotlin.reflect.full.findAnnotation
 

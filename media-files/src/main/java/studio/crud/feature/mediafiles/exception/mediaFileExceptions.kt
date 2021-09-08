@@ -1,10 +1,10 @@
 package studio.crud.feature.mediafiles.exception
 
+import studio.crud.feature.core.exception.AbstractResourceNotFoundByIdException
+import studio.crud.feature.core.exception.AbstractResourceNotFoundByUuidException
 import studio.crud.feature.core.exception.ServerException
 import studio.crud.feature.core.exception.annotation.ExceptionMetadata
 import studio.crud.feature.core.exception.annotation.ExceptionParam
-import studio.crud.sharedcommon.exception.AbstractResourceNotFoundByIdException
-import studio.crud.sharedcommon.exception.AbstractResourceNotFoundByUuidException
 
 @ExceptionMetadata(
     params = [

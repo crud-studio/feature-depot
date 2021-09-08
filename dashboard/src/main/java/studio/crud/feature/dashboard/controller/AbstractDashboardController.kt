@@ -4,12 +4,12 @@ import org.springframework.beans.factory.annotation.Autowired
 import org.springframework.http.ResponseEntity
 import org.springframework.web.bind.annotation.RequestMapping
 import org.springframework.web.bind.annotation.RequestParam
+import studio.crud.feature.core.web.annotations.CrudOperations
+import studio.crud.feature.core.web.controller.AbstractSimplifiedErrorHandlingJpaCrudController
+import studio.crud.feature.core.web.model.ResultRO
 import studio.crud.feature.dashboard.DashboardService
 import studio.crud.feature.dashboard.model.DashboardDefinition
 import studio.crud.feature.dashboard.ro.DashboardDefinitionRO
-import studio.crud.sharedcommon.crud.web.annotations.CrudOperations
-import studio.crud.sharedcommon.web.controller.AbstractSimplifiedErrorHandlingJpaCrudController
-import studio.crud.feature.core.web.model.ResultRO
 
 @CrudOperations(
     update = false,

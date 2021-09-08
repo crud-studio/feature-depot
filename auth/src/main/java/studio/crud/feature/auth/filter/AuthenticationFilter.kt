@@ -2,10 +2,10 @@ package studio.crud.feature.auth.filter
 
 import studio.crud.feature.auth.model.TokenAuthenticationRequest
 import studio.crud.feature.auth.trait.RequestAuthenticationTraitResolver
-import studio.crud.sharedcommon.web.filter.AbstractExceptionHandlingFilter
 import org.springframework.security.authentication.AuthenticationManager
 import org.springframework.security.core.context.SecurityContextHolder
 import org.springframework.stereotype.Component
+import studio.crud.feature.core.web.filter.AbstractExceptionHandlingFilter
 import javax.servlet.FilterChain
 import javax.servlet.http.HttpServletRequest
 import javax.servlet.http.HttpServletResponse

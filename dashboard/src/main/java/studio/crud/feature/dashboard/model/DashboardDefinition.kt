@@ -7,7 +7,7 @@ import org.hibernate.annotations.Fetch
 import org.hibernate.annotations.FetchMode
 import studio.crud.feature.dashboard.ro.DashboardDefinitionRO
 import studio.crud.feature.jpa.model.AbstractJpaUpdatableEntity
-import studio.crud.sharedcommon.crud.transformer.CollectionMappingTransformer
+import studio.crud.feature.core.crud.transformer.CollectionMappingTransformer
 import javax.persistence.*
 
 @Entity

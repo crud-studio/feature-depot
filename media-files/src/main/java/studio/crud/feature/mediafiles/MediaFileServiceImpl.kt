@@ -5,12 +5,12 @@ import org.springframework.beans.factory.annotation.Autowired
 import org.springframework.http.HttpStatus
 import org.springframework.stereotype.Service
 import org.springframework.web.multipart.MultipartFile
+import studio.crud.feature.core.audit.util.CurrentEntityResolver
 import studio.crud.feature.mediafiles.enums.MediaFileAclMode
 import studio.crud.feature.mediafiles.exception.MediaFileAccessDeniedException
 import studio.crud.feature.mediafiles.exception.MediaFileNotFoundByUuidException
 import studio.crud.feature.mediafiles.hooks.MediaFileDownloadHooks
 import studio.crud.feature.mediafiles.ro.MediaFileRO
-import studio.crud.sharedcommon.audit.util.CurrentEntityResolver
 import javax.servlet.http.HttpServletResponse
 
 @Service

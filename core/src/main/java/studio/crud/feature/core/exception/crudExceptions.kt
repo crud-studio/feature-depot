@@ -1,6 +1,9 @@
 package studio.crud.feature.core.exception
 
+import studio.crud.feature.core.crud.enums.CrudOperationType
 import studio.crud.feature.core.exception.annotation.ExceptionMetadata
+import studio.crud.feature.core.exception.annotation.ExceptionParam
+import kotlin.reflect.KClass
 
 /* Abstracts */
 
@@ -28,3 +31,10 @@ class ResourceUpdateException(message: String?) : AbstractCrudFacadeException(me
 
 @ExceptionMetadata
 class ResourceValidationException(message: String?) : AbstractCrudFacadeException(message)
+
+@ExceptionMetadata(
+    params = [
+        ExceptionParam("crudOperationType")
+    ]
+)
+class OperationNotSupportedForEntityException(val crudOperationType: CrudOperationType, entityClazz: KClass<*>) : ServerException(" [ " + crudOperationType.name + " ] operation for entity [ " + entityClazz.simpleName + " ] not supported")

@@ -27,14 +27,14 @@ class MfaController(
 
     @PostMapping("/{mfaType}/activate")
     fun activate(@PathVariable mfaType: MfaType, @RequestParam code: String, @AuthenticationPrincipal userInfo: UserInfo) : ResponseEntity<ResultRO<*>> {
-        return wrapVoidResult {
+        return wrapResult {
             mfaService.activate(mfaType, code, userInfo)
         }
     }
 
     @PostMapping("/{mfaType}/deactivate")
     fun deactivate(@PathVariable mfaType: MfaType, @AuthenticationPrincipal userInfo: UserInfo) : ResponseEntity<ResultRO<*>> {
-        return wrapVoidResult {
+        return wrapResult {
             mfaService.deactivate(mfaType, userInfo)
         }
     }

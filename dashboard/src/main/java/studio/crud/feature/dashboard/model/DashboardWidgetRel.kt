@@ -6,7 +6,7 @@ import org.hibernate.annotations.Type
 import studio.crud.feature.dashboard.ro.DashboardWidgetRelRO
 import studio.crud.feature.dashboard.ro.WidthDTO
 import studio.crud.feature.jpa.model.AbstractJpaUpdatableEntity
-import studio.crud.sharedcommon.crud.transformer.MappingTransformer
+import studio.crud.feature.core.crud.transformer.MappingTransformer
 import javax.persistence.*
 
 @Entity

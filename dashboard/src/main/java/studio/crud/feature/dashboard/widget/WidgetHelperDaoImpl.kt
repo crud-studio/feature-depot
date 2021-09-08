@@ -1,7 +1,7 @@
 package studio.crud.feature.dashboard.widget
 
 import org.springframework.stereotype.Repository
-import studio.crud.sharedcommon.utils.hibernateSession
+import studio.crud.feature.jpa.util.hibernateSession
 import javax.persistence.EntityManager
 import javax.persistence.PersistenceContext
 
