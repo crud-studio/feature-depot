@@ -20,7 +20,7 @@ import studio.crud.feature.auth.model.TokenPayload
 import studio.crud.feature.auth.model.UserInfo
 import studio.crud.feature.auth.token.TokenHandler
 import studio.crud.feature.core.util.extractAndValidatePayload
-import studio.crud.feature.exceptionhandling.core.ServerException
+import studio.crud.feature.core.exception.ServerException
 import java.util.*
 
 @Component

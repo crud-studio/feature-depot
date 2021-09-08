@@ -1,10 +1,10 @@
 package studio.crud.feature.reports.exception
 
+import studio.crud.feature.core.exception.AbstractResourceNotFoundByIdException
+import studio.crud.feature.core.exception.ServerException
+import studio.crud.feature.core.exception.annotation.ExceptionMetadata
+import studio.crud.feature.core.exception.annotation.ExceptionParam
 import studio.crud.feature.reports.model.Report
-import studio.crud.sharedcommon.exception.AbstractResourceNotFoundByIdException
-import studio.crud.feature.exceptionhandling.core.ExceptionMetadata
-import studio.crud.feature.exceptionhandling.core.ExceptionParam
-import studio.crud.feature.exceptionhandling.core.ServerException
 
 @ExceptionMetadata(
     params = [
