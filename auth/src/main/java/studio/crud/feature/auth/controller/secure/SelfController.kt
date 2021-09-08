@@ -7,7 +7,7 @@ import studio.crud.feature.auth.annotations.IgnorePasswordExpired
 import studio.crud.feature.auth.authentication.AuthenticationService
 import studio.crud.feature.auth.authentication.method.enums.AuthenticationMethodType
 import studio.crud.feature.auth.model.UserInfo
-import studio.crud.sharedcommon.utils.EMPTY_JSON_STRING
+import studio.crud.feature.core.util.EMPTY_JSON_STRING
 import studio.crud.sharedcommon.web.controller.AbstractErrorHandlingController
 import studio.crud.sharedcommon.web.ro.ResultRO
 import javax.servlet.http.HttpServletRequest

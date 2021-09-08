@@ -1,8 +1,8 @@
 package studio.crud.feature.reports
 
+import studio.crud.feature.core.util.KeyValuePair
 import studio.crud.feature.reports.exception.ReportNotFoundByIdException
 import studio.crud.feature.reports.ro.ReportDataRO
-import studio.crud.sharedcommon.utils.KeyValuePair
 
 /**
  * Service for reports data.

@@ -17,7 +17,7 @@ import studio.crud.feature.auth.exception.MfaProviderNotSupportedException
 import studio.crud.feature.auth.exception.NoMfaSetupInProgressException
 import studio.crud.feature.auth.model.UserInfo
 import studio.crud.feature.auth.token.TokenHandler
-import studio.crud.sharedcommon.utils.extractAndValidatePayload
+import studio.crud.feature.core.util.extractAndValidatePayload
 
 @Service
 class MfaServiceImpl(private val crudHandler: CrudHandler,

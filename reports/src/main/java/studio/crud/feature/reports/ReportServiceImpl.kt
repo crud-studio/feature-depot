@@ -1,10 +1,10 @@
 package studio.crud.feature.reports
 
 import org.springframework.stereotype.Service
+import studio.crud.feature.core.util.KeyValuePair
+import studio.crud.feature.core.util.KeyValuePair.Companion.toMap
 import studio.crud.feature.reports.model.Report
 import studio.crud.feature.reports.ro.ReportDataRO
-import studio.crud.sharedcommon.utils.KeyValuePair
-import studio.crud.sharedcommon.utils.toMap
 import java.util.*
 
 @Service

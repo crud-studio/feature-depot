@@ -4,7 +4,7 @@ import org.springframework.boot.context.properties.ConfigurationProperties
 import org.springframework.context.annotation.Configuration
 import org.springframework.validation.Errors
 import studio.crud.feature.auth.config.properties.AUTHENTICATION_CONFIG_PREFIX
-import studio.crud.sharedcommon.config.ToggleableProperties
+import studio.crud.feature.core.config.ToggleableProperties
 
 @Configuration
 @ConfigurationProperties(GoogleAuthenticationProperties.PREFIX)

@@ -7,7 +7,7 @@ import studio.crud.feature.auth.annotations.IgnoreMfa
 import studio.crud.feature.auth.authentication.mfa.MfaService
 import studio.crud.feature.auth.authentication.mfa.enums.MfaType
 import studio.crud.feature.auth.model.UserInfo
-import studio.crud.sharedcommon.utils.EMPTY_JSON_STRING
+import studio.crud.feature.core.util.EMPTY_JSON_STRING
 import studio.crud.sharedcommon.web.controller.AbstractErrorHandlingController
 import studio.crud.sharedcommon.web.ro.ResultRO
 import javax.servlet.http.HttpServletRequest

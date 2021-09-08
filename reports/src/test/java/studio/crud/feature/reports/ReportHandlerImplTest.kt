@@ -4,15 +4,14 @@ import com.antelopesystem.crudframework.crud.handler.CrudHandler
 import com.nhaarman.mockitokotlin2.mock
 import org.junit.jupiter.api.Test
 import strikt.api.expectThrows
+import studio.crud.feature.core.util.KeyValuePair.Companion.toMap
+import studio.crud.feature.core.util.KeyValuePair.Companion.vs
 import studio.crud.feature.reports.enums.ReportParameterType
 import studio.crud.feature.reports.exception.ReportParameterInvalidException
 import studio.crud.feature.reports.exception.ReportParameterInvalidValueException
 import studio.crud.feature.reports.exception.ReportParameterMissingValueException
 import studio.crud.feature.reports.model.Report
 import studio.crud.feature.reports.model.ReportParameterDefinitionDTO
-import studio.crud.sharedcommon.utils.toMap
-import studio.crud.sharedcommon.utils.vs
-
 class ReportHandlerImplTest {
     private val crudHandler: CrudHandler = mock()
     private val reportDao: ReportDao = mock()

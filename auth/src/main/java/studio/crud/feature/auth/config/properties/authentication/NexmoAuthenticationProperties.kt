@@ -6,7 +6,7 @@ import org.springframework.validation.Errors
 import studio.crud.feature.auth.config.properties.AUTHENTICATION_CONFIG_PREFIX
 import studio.crud.feature.auth.integrations.nexmo.NexmoBypassNumberPojo
 import studio.crud.feature.auth.integrations.nexmo.NexmoCodeLength
-import studio.crud.sharedcommon.config.ToggleableProperties
+import studio.crud.feature.core.config.ToggleableProperties
 
 @Configuration
 @ConfigurationProperties(NexmoAuthenticationProperties.PREFIX)

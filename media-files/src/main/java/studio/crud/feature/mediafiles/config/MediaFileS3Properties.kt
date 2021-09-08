@@ -3,8 +3,8 @@ package studio.crud.feature.mediafiles.config
 import org.springframework.boot.context.properties.ConfigurationProperties
 import org.springframework.context.annotation.Configuration
 import org.springframework.validation.Errors
-import studio.crud.sharedcommon.config.ToggleableProperties
-import studio.crud.sharedcommon.feature.FEATURE_PROPERTY_PREFIX
+import studio.crud.feature.core.config.ToggleableProperties
+import studio.crud.feature.core.util.FEATURE_PROPERTY_PREFIX
 
 @Configuration
 @ConfigurationProperties(prefix = MediaFileS3Properties.PREFIX)

@@ -4,7 +4,7 @@ import org.springframework.boot.context.properties.ConfigurationProperties
 import org.springframework.context.annotation.Configuration
 import org.springframework.validation.Errors
 import studio.crud.feature.auth.authentication.method.enums.AuthenticationMethodType
-import studio.crud.sharedcommon.config.ValidatableProperties
+import studio.crud.feature.core.config.ValidatableProperties
 
 @Configuration
 @ConfigurationProperties(AuthProperties.PREFIX)

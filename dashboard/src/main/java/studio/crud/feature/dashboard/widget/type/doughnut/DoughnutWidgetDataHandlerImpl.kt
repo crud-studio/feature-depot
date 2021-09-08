@@ -1,11 +1,11 @@
 package studio.crud.feature.dashboard.widget.type.doughnut
 
 import org.springframework.stereotype.Component
+import studio.crud.feature.core.util.KeyValuePair.Companion.vs
 import studio.crud.feature.dashboard.enums.DashboardWidgetType
 import studio.crud.feature.dashboard.model.DashboardWidget
 import studio.crud.feature.dashboard.widget.WidgetHelper
 import studio.crud.feature.dashboard.widget.type.core.AbstractDashboardWidgetTypeDataHandler
-import studio.crud.sharedcommon.utils.vs
 
 @Component
 class DoughnutWidgetDataHandlerImpl(

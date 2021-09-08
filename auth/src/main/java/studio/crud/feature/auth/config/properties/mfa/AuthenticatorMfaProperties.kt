@@ -3,7 +3,7 @@ package studio.crud.feature.auth.config.properties.mfa
 import org.springframework.boot.context.properties.ConfigurationProperties
 import org.springframework.context.annotation.Configuration
 import studio.crud.feature.auth.config.properties.MFA_CONFIG_PREFIX
-import studio.crud.sharedcommon.config.ToggleableProperties
+import studio.crud.feature.core.config.ToggleableProperties
 
 @Configuration
 @ConfigurationProperties(AuthenticatorMfaProperties.PREFIX)

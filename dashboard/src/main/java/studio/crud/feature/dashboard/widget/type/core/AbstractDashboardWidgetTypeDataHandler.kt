@@ -1,8 +1,8 @@
 package studio.crud.feature.dashboard.widget.type.core
 
 import org.springframework.core.GenericTypeResolver
+import studio.crud.feature.core.util.extractAndValidatePayload
 import studio.crud.feature.dashboard.model.DashboardWidget
-import studio.crud.sharedcommon.utils.extractAndValidatePayload
 import kotlin.reflect.KClass
 
 abstract class AbstractDashboardWidgetTypeDataHandler<ResultType : Any, SettingsType : Any> : DashboardWidgetTypeDataHandler<ResultType> {

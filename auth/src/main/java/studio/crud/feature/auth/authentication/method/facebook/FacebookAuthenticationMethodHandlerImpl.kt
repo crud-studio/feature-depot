@@ -16,7 +16,7 @@ import studio.crud.feature.auth.entity.model.Entity
 import studio.crud.feature.auth.entity.model.EntityAuthenticationMethod
 import studio.crud.feature.auth.exception.FacebookTokenParsingFailedException
 import studio.crud.feature.auth.exception.FacebookUidMismatchException
-import studio.crud.sharedcommon.utils.GSON
+import studio.crud.feature.core.util.GSON
 import kotlin.reflect.KClass
 
 @Component
