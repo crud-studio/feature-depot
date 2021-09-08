@@ -16,6 +16,7 @@
 	</parent>
 
 	<modules>
+		<module>bom</module>
 		<module>core</module>
 		<module>jpa</module>
 		<module>flyway</module>
@@ -28,4 +29,16 @@
 		<module>remote-storage</module>
 		<module>dashboard</module>
 	</modules>
+
+	<dependencyManagement>
+		<dependencies>
+			<dependency>
+				<groupId>studio.crud.feature</groupId>
+				<artifactId>bom</artifactId>
+				<version>1.0.0-SNAPSHOT</version>
+				<type>pom</type>
+				<scope>import</scope>
+			</dependency>
+		</dependencies>
+	</dependencyManagement>
 </project>
