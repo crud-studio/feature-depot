@@ -5,8 +5,8 @@ import org.springframework.http.ResponseEntity
 import org.springframework.web.bind.annotation.*
 import org.springframework.web.multipart.MultipartFile
 import studio.crud.feature.core.web.annotations.CrudOperations
-import studio.crud.feature.core.web.controller.AbstractSimplifiedErrorHandlingJpaCrudController
 import studio.crud.feature.core.web.model.ResultRO
+import studio.crud.feature.jpa.web.AbstractSimplifiedErrorHandlingJpaCrudController
 import studio.crud.feature.mediafiles.MediaFileService
 import studio.crud.feature.mediafiles.enums.MediaFileAclMode
 import studio.crud.feature.mediafiles.model.MediaFile

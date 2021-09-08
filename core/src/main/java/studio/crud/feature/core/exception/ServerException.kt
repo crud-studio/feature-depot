@@ -3,7 +3,7 @@ package studio.crud.feature.core.exception
 import mu.KotlinLogging
 import org.springframework.core.annotation.AnnotationUtils
 import org.springframework.util.ReflectionUtils
-import studio.crud.feature.core.exception.model.ExceptionMetadata
+import studio.crud.feature.core.exception.annotation.ExceptionMetadata
 import studio.crud.feature.core.util.KeyValuePair
 import java.io.Serializable
 import java.lang.reflect.Field
