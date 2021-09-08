@@ -11,6 +11,7 @@ import org.springframework.beans.factory.annotation.Autowired
 import org.springframework.stereotype.Component
 import org.springframework.util.ReflectionUtils
 import org.springframework.web.multipart.MultipartFile
+import studio.crud.feature.core.util.executeSingleOrNull
 import studio.crud.feature.mediafiles.entityassociation.MediaFileEntityFieldMetadata
 import studio.crud.feature.mediafiles.entityassociation.MediaFileEntityFieldResolver
 import studio.crud.feature.mediafiles.entityassociation.exception.IncorrectFileAclModeException
@@ -24,8 +25,6 @@ import studio.crud.feature.mediafiles.exception.MediaFileNotFoundByUuidException
 import studio.crud.feature.mediafiles.hooks.MediaFileAssociationHooks
 import studio.crud.feature.mediafiles.model.MediaFile
 import studio.crud.feature.mediafiles.storage.MediaFileStorageProvider
-import studio.crud.sharedcommon.crud.executeSingleOrNull
-import studio.crud.sharedcommon.extentions.toDoubleBase64ForUrls
 import java.util.*
 
 @Component
@@ -40,7 +39,7 @@ class MediaFileHandlerImpl(
     lateinit var additionalStorageProviders: Map<MediaFileStorageType, List<MediaFileStorageProvider>>
 
     override fun uploadFile(file: MultipartFile, alias: String?, description: String?, creatorObjectId: Long?, creatorObjectType: String?, aclMode: MediaFileAclMode): MediaFile {
-        val fileUuid = UUID.randomUUID().toDoubleBase64ForUrls()
+        val fileUuid = UUID.randomUUID().toString()
         val fileHash = DigestUtils.sha256Hex(file.bytes)
         val extension = FilenameUtils.getExtension(file.originalFilename).toLowerCase()
         val fileName = file.originalFilename

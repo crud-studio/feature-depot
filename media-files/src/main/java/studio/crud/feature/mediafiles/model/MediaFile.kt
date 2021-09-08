@@ -8,7 +8,6 @@ import studio.crud.feature.mediafiles.enums.MediaFileAclMode
 import studio.crud.feature.mediafiles.enums.MediaFileStorageType
 import studio.crud.feature.mediafiles.ro.MediaFileRO
 import studio.crud.feature.mediafiles.ro.MinimalMediaFileRO
-import studio.crud.sharedcommon.extentions.toDoubleBase64ForUrls
 import java.util.*
 import javax.persistence.*
 
@@ -50,7 +49,7 @@ class MediaFile(
         MappedField(target = MinimalMediaFileRO::class)
     )
     @Column(name = "uuid", nullable = false, updatable = false)
-    var uuid: String = UUID.randomUUID().toDoubleBase64ForUrls()
+    var uuid: String = UUID.randomUUID().toString()
 
 
     /**

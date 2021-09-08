@@ -4,8 +4,8 @@ import com.antelopesystem.crudframework.crud.handler.CrudHandler
 import com.antelopesystem.crudframework.modelfilter.dsl.where
 import studio.crud.feature.auth.token.metadata.model.TokenMetadata
 import studio.crud.feature.auth.model.ParsedStatelessToken
-import studio.crud.sharedcommon.crud.createOrUpdate
 import org.springframework.stereotype.Component
+import studio.crud.feature.core.util.createOrUpdate
 
 @Component
 class TokenMetadataHandlerImpl(
