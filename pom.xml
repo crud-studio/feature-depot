@@ -16,7 +16,6 @@
 	</parent>
 
 	<modules>
-		<module>bom</module>
 		<module>core</module>
 		<module>jpa</module>
 		<module>flyway</module>
