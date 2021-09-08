@@ -17,10 +17,5 @@
     </properties>
 
     <dependencies>
-        <!--    Internal    -->
-        <dependency>
-            <groupId>studio.crud</groupId>
-            <artifactId>shared-common</artifactId>
-        </dependency>
     </dependencies>
 </project>
