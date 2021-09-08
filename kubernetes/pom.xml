@@ -19,6 +19,10 @@
     <dependencies>
         <!--    Internal    -->
         <dependency>
+            <groupId>studio.crud.feature</groupId>
+            <artifactId>core</artifactId>
+        </dependency>
+        <dependency>
             <groupId>org.springframework.cloud</groupId>
             <artifactId>spring-cloud-starter-kubernetes-fabric8-all</artifactId>
         </dependency>

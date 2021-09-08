@@ -28,11 +28,4 @@
 		<module>remote-storage</module>
 		<module>dashboard</module>
 	</modules>
-
-	<dependencies>
-		<dependency>
-			<groupId>studio.crud.feature</groupId>
-			<artifactId>core</artifactId>
-		</dependency>
-	</dependencies>
 </project>
