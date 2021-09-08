@@ -5,7 +5,7 @@ import org.springframework.web.bind.annotation.*
 import studio.crud.feature.auth.authentication.AuthenticationService
 import studio.crud.feature.auth.authentication.method.enums.AuthenticationMethodType
 import studio.crud.feature.core.util.EMPTY_JSON_STRING
-import studio.crud.sharedcommon.web.controller.AbstractErrorHandlingController
+import studio.crud.feature.core.web.controller.AbstractErrorHandlingController
 import studio.crud.feature.core.web.model.ResultRO
 import javax.servlet.http.HttpServletRequest
 
