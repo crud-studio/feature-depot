@@ -1,6 +1,5 @@
 package studio.crud.feature.core.audit.filter
 
-import org.apache.logging.log4j.ThreadContext
 import org.springframework.core.Ordered
 import org.springframework.core.annotation.Order
 import org.springframework.stereotype.Component
@@ -19,7 +18,6 @@ import javax.servlet.http.HttpServletResponse
 class RequestIdFilter : OncePerRequestFilter() {
     override fun doFilterInternal(request: HttpServletRequest, response: HttpServletResponse, chain: FilterChain) {
         val requestId = generateFriendlyId()
-        ThreadContext.put("requestId", requestId)
         request.requestId = requestId
         chain.doFilter(request, response)
     }
