@@ -67,6 +67,11 @@
                 <artifactId>dashboard</artifactId>
                 <version>1.0.0-SNAPSHOT</version>
             </dependency>
+            <dependency>
+                <groupId>studio.crud.feature</groupId>
+                <artifactId>quartz</artifactId>
+                <version>1.0.0-SNAPSHOT</version>
+            </dependency>
         </dependencies>
     </dependencyManagement>
 </project>

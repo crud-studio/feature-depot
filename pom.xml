@@ -48,6 +48,7 @@
         <module>kubernetes</module>
         <module>remote-storage</module>
         <module>dashboard</module>
+        <module>quartz</module>
     </modules>
 
     <dependencies>
