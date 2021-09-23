@@ -49,6 +49,7 @@
         <module>remote-storage</module>
         <module>dashboard</module>
         <module>quartz</module>
+        <module>soundex</module>
     </modules>
 
     <dependencies>
