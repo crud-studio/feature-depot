@@ -1,4 +1,4 @@
-package studio.crud.feature.soundex.doublemetaphone.transliterator
+package studio.crud.feature.soundex.transliterator
 
 object englishTransliterator : LanguageTransliterator {
     override val language: TransliterationLanguage

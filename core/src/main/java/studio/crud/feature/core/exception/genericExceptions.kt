@@ -9,7 +9,7 @@ import kotlin.reflect.KProperty
 
 /* Abstracts */
 
-abstract class InternalException(message: String) : ServerException(message) {
+open class InternalException(message: String) : ServerException(message) {
     init {
         overrideRepresentation(GeneralSystemException())
     }

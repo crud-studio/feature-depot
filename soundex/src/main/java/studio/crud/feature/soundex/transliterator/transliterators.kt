@@ -1,6 +1,6 @@
-    package studio.crud.feature.soundex.doublemetaphone.transliterator
+    package studio.crud.feature.soundex.transliterator
 
-import studio.crud.feature.soundex.doublemetaphone.exception.TransliteratorNotFoundException
+import studio.crud.feature.soundex.transliterator.exception.TransliteratorNotFoundException
 
 val transliterators = mapOf(
     TransliterationLanguage.English to englishTransliterator,

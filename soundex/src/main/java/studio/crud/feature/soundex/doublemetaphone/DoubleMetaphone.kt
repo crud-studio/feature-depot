@@ -1,8 +1,8 @@
 package studio.crud.feature.soundex.doublemetaphone
 
 import org.apache.commons.lang3.StringUtils
-import studio.crud.feature.soundex.doublemetaphone.transliterator.TransliterationLanguage
-import studio.crud.feature.soundex.doublemetaphone.transliterator.transliterate
+import studio.crud.feature.soundex.transliterator.TransliterationLanguage
+import studio.crud.feature.soundex.transliterator.transliterate
 
 private const val DEFAULT_MAX_LENGTH = 16
 private val dm = DoubleMetaphoneAlgo()
