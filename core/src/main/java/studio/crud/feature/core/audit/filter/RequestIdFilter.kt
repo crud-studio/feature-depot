@@ -1,5 +1,6 @@
 package studio.crud.feature.core.audit.filter
 
+import org.slf4j.MDC
 import org.springframework.core.Ordered
 import org.springframework.core.annotation.Order
 import org.springframework.stereotype.Component
@@ -19,6 +20,7 @@ class RequestIdFilter : OncePerRequestFilter() {
     override fun doFilterInternal(request: HttpServletRequest, response: HttpServletResponse, chain: FilterChain) {
         val requestId = generateFriendlyId()
         request.requestId = requestId
+        MDC.put("requestId", requestId)
         chain.doFilter(request, response)
     }
 
