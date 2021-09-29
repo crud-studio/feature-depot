@@ -2,6 +2,7 @@ package studio.crud.feature.quartz;
 
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
+import org.jetbrains.annotations.Nullable;
 import org.quartz.*;
 import studio.crud.feature.quartz.model.AbstractQuartzJob;
 import studio.crud.feature.quartz.model.QuartzJobClass;
@@ -49,10 +50,13 @@ public class QuartzJobUtil {
 		}
 	}
 
+	@Nullable
 	private static ScheduleBuilder getSchedule(AbstractQuartzJob job) {
-		if(job.getJobCron() != null && !job.getJobCron().isEmpty()) {
+		if(job.getJobDuration() != null && job.getJobDuration().getSeconds() > 0L) {
+			return simpleSchedule().repeatForever().withIntervalInSeconds(Math.toIntExact(job.getJobDuration().getSeconds()));
+		} else if(job.getJobCron() != null && !job.getJobCron().isEmpty()) {
 			return cronSchedule(job.getJobCron());
-		} else if(job.getJobIntervalSeconds() > 0) {
+		} else if(job.getJobIntervalSeconds() != null && job.getJobIntervalSeconds() > 0) {
 			return simpleSchedule().repeatForever().withIntervalInSeconds(job.getJobIntervalSeconds());
 		}
 
