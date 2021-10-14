@@ -12,7 +12,7 @@ abstract class AbstractJpaRO : Serializable {
         other as AbstractJpaEntity?
         if (this === other) return true
         if (this.id == other.id) return true
-        return true
+        return false
     }
 
     final override fun hashCode(): Int {
