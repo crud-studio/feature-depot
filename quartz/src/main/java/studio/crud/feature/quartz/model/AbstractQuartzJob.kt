@@ -10,15 +10,15 @@ abstract class AbstractQuartzJob : Runnable {
     /**
      * The job duration, highest precedence if set
      */
-    val jobDuration: Duration? = null
+    open val jobDuration: Duration? = null
 
     /**
      * Job cron, takes precedence over job interval in seconds if set
      */
-    val jobCron: String? = null
+    open val jobCron: String? = null
 
     /**
      * Job interval in seconds, lowest precedence
      */
-    val jobIntervalSeconds: Int? = null
+    open val jobIntervalSeconds: Int? = null
 }
