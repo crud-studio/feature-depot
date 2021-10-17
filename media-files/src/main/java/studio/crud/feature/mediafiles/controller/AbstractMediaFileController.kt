@@ -11,6 +11,7 @@ import studio.crud.feature.mediafiles.MediaFileService
 import studio.crud.feature.mediafiles.enums.MediaFileAclMode
 import studio.crud.feature.mediafiles.model.MediaFile
 import studio.crud.feature.mediafiles.ro.MediaFileRO
+import javax.servlet.http.HttpServletRequest
 import javax.servlet.http.HttpServletResponse
 
 @CrudOperations(create = false, update = false, delete = false)
@@ -40,10 +41,11 @@ abstract class AbstractMediaFileController<RO : MediaFileRO>:
     @GetMapping("/download/{uuid}")
     fun getMediaFile(
         @PathVariable uuid: String,
-        response: HttpServletResponse
+        response: HttpServletResponse,
+        request: HttpServletRequest
     ) {
         try {
-            mediaFileService.downloadFile(uuid, response)
+            mediaFileService.downloadFile(uuid, request.parameterMap.map { it.key to it.value.toList() }.toMap(), response)
         } catch (e: Exception) {
             response.status = 400
         }
