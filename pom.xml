@@ -4,7 +4,7 @@
     <modelVersion>4.0.0</modelVersion>
     <groupId>studio.crud.feature</groupId>
     <artifactId>feature-parent-pom</artifactId>
-    <version>1.0</version>
+    <version>${revision}</version>
     <packaging>pom</packaging>
     <name>Feature Parent POM</name>
 
@@ -52,6 +52,7 @@
     </parent>
 
     <properties>
+        <revision>1.0.0-SNAPSHOT</revision>
         <!-- Project -->
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <java.version>1.8</java.version>

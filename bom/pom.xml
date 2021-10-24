@@ -4,83 +4,124 @@
     <groupId>studio.crud.feature</groupId>
     <artifactId>bom</artifactId>
     <name>Feature Depot BOM</name>
-    <version>1.0.0-SNAPSHOT</version>
+    <version>${revision}</version>
     <packaging>pom</packaging>
+
+    <licenses>
+        <license>
+            <name>MIT License</name>
+            <url>http://www.opensource.org/licenses/mit-license.php</url>
+        </license>
+    </licenses>
+
+    <developers>
+        <developer>
+            <name>Idan Elhalwani</name>
+            <organization>Crud Studio</organization>
+        </developer>
+        <developer>
+            <name>Shani Holdengreber</name>
+            <organization>Crud Studio</organization>
+        </developer>
+    </developers>
+
+    <scm>
+        <connection>scm:git:git@github.com:crud-studio/feature-depot.git</connection>
+        <developerConnection>scm:git:git@github.com:crud-studio/feature-depot.git</developerConnection>
+        <url>https://github.com/crud-studio/feature-depot</url>
+        <tag>HEAD</tag>
+    </scm>
+
+    <distributionManagement>
+        <snapshotRepository>
+            <id>ossrh</id>
+            <url>https://oss.sonatype.org/content/repositories/snapshots</url>
+        </snapshotRepository>
+        <repository>
+            <id>ossrh</id>
+            <url>https://oss.sonatype.org/service/local/staging/deploy/maven2/</url>
+        </repository>
+    </distributionManagement>
+
+    <properties>
+        <revision>1.0.0-SNAPSHOT</revision>
+    </properties>
+
     <dependencyManagement>
         <dependencies>
             <dependency>
                 <groupId>studio.crud.feature</groupId>
                 <artifactId>core</artifactId>
-                <version>1.0.0-SNAPSHOT</version>
+                <version>${revision}</version>
             </dependency>
 
             <dependency>
                 <groupId>studio.crud.feature</groupId>
                 <artifactId>jpa</artifactId>
-                <version>1.0.0-SNAPSHOT</version>
+                <version>${revision}</version>
             </dependency>
 
             <dependency>
                 <groupId>studio.crud.feature</groupId>
                 <artifactId>flyway</artifactId>
-                <version>1.0.0-SNAPSHOT</version>
+                <version>${revision}</version>
             </dependency>
 
             <dependency>
                 <groupId>studio.crud.feature</groupId>
                 <artifactId>parameters</artifactId>
-                <version>1.0.0-SNAPSHOT</version>
+                <version>${revision}</version>
             </dependency>
 
             <dependency>
                 <groupId>studio.crud.feature</groupId>
                 <artifactId>auth</artifactId>
-                <version>1.0.0-SNAPSHOT</version>
+                <version>${revision}</version>
             </dependency>
             <dependency>
                 <groupId>studio.crud.feature</groupId>
                 <artifactId>media-files</artifactId>
-                <version>1.0.0-SNAPSHOT</version>
+                <version>${revision}</version>
             </dependency>
             <dependency>
                 <groupId>studio.crud.feature</groupId>
                 <artifactId>reports</artifactId>
-                <version>1.0.0-SNAPSHOT</version>
+                <version>${revision}</version>
             </dependency>
             <dependency>
                 <groupId>studio.crud.feature</groupId>
                 <artifactId>trace-log</artifactId>
-                <version>1.0.0-SNAPSHOT</version>
+                <version>${revision}</version>
             </dependency>
             <dependency>
                 <groupId>studio.crud.feature</groupId>
                 <artifactId>kubernetes</artifactId>
-                <version>1.0.0-SNAPSHOT</version>
+                <version>${revision}</version>
             </dependency>
             <dependency>
                 <groupId>studio.crud.feature</groupId>
                 <artifactId>remote-storage</artifactId>
-                <version>1.0.0-SNAPSHOT</version>
+                <version>${revision}</version>
             </dependency>
             <dependency>
                 <groupId>studio.crud.feature</groupId>
                 <artifactId>dashboard</artifactId>
-                <version>1.0.0-SNAPSHOT</version>
+                <version>${revision}</version>
             </dependency>
             <dependency>
                 <groupId>studio.crud.feature</groupId>
                 <artifactId>quartz</artifactId>
-                <version>1.0.0-SNAPSHOT</version>
+                <version>${revision}</version>
             </dependency>
             <dependency>
                 <groupId>studio.crud.feature</groupId>
                 <artifactId>soundex</artifactId>
-                <version>1.0.0-SNAPSHOT</version>
+                <version>${revision}</version>
             </dependency>
             <dependency>
                 <groupId>studio.crud.feature</groupId>
                 <artifactId>cache</artifactId>
-                <version>1.0.0-SNAPSHOT</version>
+                <version>${revision}</version>
             </dependency>
         </dependencies>
     </dependencyManagement>
