@@ -8,7 +8,7 @@ import java.time.Duration
 @Configuration
 class AuditConfig {
     @Bean
-    fun parameterCacheDefinition(): CacheDefinition {
+    fun geoIpResolutionCache(): CacheDefinition {
         return CacheDefinition("geoIpResolutionCache", 1200, Duration.ofMinutes(10), Duration.ofMinutes(10))
     }
 
