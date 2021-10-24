@@ -21,6 +21,7 @@
         <dependency>
             <groupId>studio.crud.feature</groupId>
             <artifactId>core</artifactId>
+            <version>${revision}</version>
         </dependency>
         <dependency>
             <groupId>org.apache.commons</groupId>

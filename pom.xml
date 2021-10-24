@@ -38,11 +38,11 @@
     <distributionManagement>
         <snapshotRepository>
             <id>ossrh</id>
-            <url>https://oss.sonatype.org/content/repositories/snapshots</url>
+            <url>https://s01.oss.sonatype.org/content/repositories/snapshots</url>
         </snapshotRepository>
         <repository>
             <id>ossrh</id>
-            <url>https://oss.sonatype.org/service/local/staging/deploy/maven2/</url>
+            <url>https://s01.oss.sonatype.org/service/local/staging/deploy/maven2/</url>
         </repository>
     </distributionManagement>
 
@@ -54,8 +54,8 @@
     </parent>
 
     <properties>
-        <revision>1.0.0-SNAPSHOT</revision>
-        <!-- Project -->
+        <revision>DEV-SNAPSHOT</revision>
+        <!-- Projec t -->
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <java.version>1.8</java.version>
         <kotlin.version>1.3.72</kotlin.version>
@@ -75,6 +75,7 @@
     </properties>
 
     <modules>
+        <module>bom</module>
         <module>core</module>
         <module>jpa</module>
         <module>flyway</module>
@@ -191,14 +192,6 @@
 
     <dependencyManagement>
         <dependencies>
-            <!-- Internal -->
-            <dependency>
-                <groupId>studio.crud.feature</groupId>
-                <artifactId>bom</artifactId>
-                <version>1.0.0-SNAPSHOT</version>
-                <type>pom</type>
-                <scope>import</scope>
-            </dependency>
             <!-- Spring -->
             <dependency>
                 <groupId>org.springframework.cloud</groupId>
@@ -435,10 +428,6 @@
             </pluginRepositories>
             <build>
                 <plugins>
-                    <plugin>
-                        <artifactId>maven-release-plugin</artifactId>
-                        <version>2.5.3</version>
-                    </plugin>
                     <plugin>
                         <groupId>org.apache.maven.plugins</groupId>
                         <artifactId>maven-gpg-plugin</artifactId>
