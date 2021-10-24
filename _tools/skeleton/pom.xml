@@ -2,8 +2,8 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
     <artifactId>{{featureName}}</artifactId>
-    <version>1.0.0-SNAPSHOT</version>
-    <name>{{featureNameCapitalized}}</name>
+    <version>${revision}</version>
+    <name>{{featureNameCapitalized}} Feature</name>
 
     <parent>
         <groupId>studio.crud.feature</groupId>
@@ -13,9 +13,13 @@
     </parent>
 
     <properties>
-        <jar-name>{{featureName}} Feature</jar-name>
+        <jar-name>{{featureName}}</jar-name>
     </properties>
 
     <dependencies>
+        <dependency>
+            <groupId>studio.crud.feature</groupId>
+            <artifactId>core</artifactId>
+        </dependency>
     </dependencies>
 </project>
