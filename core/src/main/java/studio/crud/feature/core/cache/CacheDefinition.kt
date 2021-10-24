@@ -21,5 +21,10 @@ class CacheDefinition(
     /**
      * The time after which an element expires after it has been accessed, 0 for a permanent cache
      */
-    var tti: Duration? = null
+    var tti: Duration? = null,
+
+    /**
+     * Whether to allow caching null values
+     */
+    var allowNullValues: Boolean? = null
 )

@@ -3,19 +3,21 @@ package studio.crud.feature.cache.redis
 import mu.KotlinLogging
 import org.springframework.beans.factory.InitializingBean
 import org.springframework.beans.factory.annotation.Autowired
+import org.springframework.boot.autoconfigure.cache.RedisCacheManagerBuilderCustomizer
+import org.springframework.boot.autoconfigure.condition.ConditionalOnClass
 import org.springframework.boot.autoconfigure.condition.ConditionalOnProperty
-import org.springframework.cache.CacheManager
 import org.springframework.context.annotation.Bean
 import org.springframework.context.annotation.Configuration
-import org.springframework.context.annotation.Primary
+import org.springframework.data.redis.cache.RedisCache
 import org.springframework.data.redis.cache.RedisCacheConfiguration
-import org.springframework.data.redis.cache.RedisCacheManager
-import org.springframework.data.redis.connection.RedisConnectionFactory
-import studio.crud.feature.core.cache.CacheDefinition
+import org.springframework.data.redis.serializer.JdkSerializationRedisSerializer
+import org.springframework.data.redis.serializer.RedisSerializationContext
 import studio.crud.feature.cache.config.properties.CacheProperties
+import studio.crud.feature.core.cache.CacheDefinition
 
 @Configuration
-@ConditionalOnProperty(prefix = CacheProperties.PREFIX, name = ["provider"], havingValue = "Redis")
+@ConditionalOnClass(RedisCache::class)
+@ConditionalOnProperty(prefix = "spring.cache", name = ["type"], havingValue = "REDIS")
 class RedisCacheConfig(
     @Autowired(required = false)
     private val beanCacheDefinitions: List<CacheDefinition>,
@@ -28,24 +30,28 @@ class RedisCacheConfig(
     }
 
     @Bean
-    @Primary
-    fun redisCacheManager(redisConnectionFactory: RedisConnectionFactory): CacheManager {
-        val builder = RedisCacheManager.RedisCacheManagerBuilder
-            .fromConnectionFactory(redisConnectionFactory)
-        val definitions = beanCacheDefinitions + properties.caches
-        log.debug { "Found ${definitions.size} cache definition beans" }
-        for (definition in definitions) {
-            log.debug { "Registering cache definition ${definition.name}" }
-            RedisCacheDefinitionValidator.validate(definition)
-            builder
-                .withCacheConfiguration(
-                    definition.name,
-                    RedisCacheConfiguration.defaultCacheConfig()
-                        .entryTtl(definition.ttl!!)
-                )
+    fun redisCacheManagerBuilderCustomizer(): RedisCacheManagerBuilderCustomizer {
+        val customizer = RedisCacheManagerBuilderCustomizer { builder ->
+            val definitions = beanCacheDefinitions + properties.caches
+            val serializingPair = RedisSerializationContext.SerializationPair.fromSerializer(JdkSerializationRedisSerializer())
+            log.debug { "Found ${definitions.size} cache definition beans" }
+            for (definition in definitions) {
+                log.debug { "Registering cache definition ${definition.name}" }
+                RedisCacheDefinitionValidator.validate(definition)
+                val cacheConfiguration = RedisCacheConfiguration.defaultCacheConfig()
+                    .entryTtl(definition.ttl!!)
+                    .serializeValuesWith(serializingPair)
+                if(definition.allowNullValues != true) {
+                    cacheConfiguration.disableCachingNullValues()
+                }
+                builder
+                    .withCacheConfiguration(
+                        definition.name,
+                        cacheConfiguration
+                    )
+            }
         }
-
-        return builder.build()
+        return customizer
     }
 
     companion object {

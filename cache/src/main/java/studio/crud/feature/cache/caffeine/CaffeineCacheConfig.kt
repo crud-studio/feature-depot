@@ -4,30 +4,24 @@ import com.github.benmanes.caffeine.cache.Caffeine
 import mu.KotlinLogging
 import org.springframework.beans.factory.InitializingBean
 import org.springframework.beans.factory.annotation.Autowired
+import org.springframework.boot.autoconfigure.condition.ConditionalOnClass
 import org.springframework.boot.autoconfigure.condition.ConditionalOnProperty
 import org.springframework.cache.caffeine.CaffeineCacheManager
-import org.springframework.context.annotation.Bean
 import org.springframework.context.annotation.Configuration
-import org.springframework.context.annotation.Primary
-import studio.crud.feature.core.cache.CacheDefinition
 import studio.crud.feature.cache.config.properties.CacheProperties
+import studio.crud.feature.core.cache.CacheDefinition
 
 @Configuration
-@ConditionalOnProperty(prefix = CacheProperties.PREFIX, name = ["provider"], havingValue = "Caffeine", matchIfMissing = true)
+@ConditionalOnProperty(prefix = "spring.cache", name = ["type"], havingValue = "CAFFEINE")
 class CaffeineCacheConfig(
     @Autowired(required = false)
     private val beanCacheDefinitions: List<CacheDefinition>,
-    private val properties: CacheProperties
+    private val properties: CacheProperties,
+    private val cacheManager: CaffeineCacheManager
 ): InitializingBean {
 
     override fun afterPropertiesSet() {
         log.info { "Caffeine caching is active" }
-    }
-
-    @Bean
-    @Primary
-    fun caffeineCacheManager(): CaffeineCacheManager {
-        val cacheManager = CaffeineCacheManager()
         val definitions = beanCacheDefinitions + properties.caches
         log.debug { "Found ${definitions.size} cache definition beans" }
         for (definition in definitions) {
@@ -40,7 +34,6 @@ class CaffeineCacheConfig(
                 .build<Any, Any>()
             cacheManager.registerCustomCache(definition.name, cache)
         }
-        return cacheManager
     }
 
     companion object {

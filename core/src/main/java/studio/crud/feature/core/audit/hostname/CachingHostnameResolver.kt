@@ -6,6 +6,7 @@ import org.springframework.beans.factory.InitializingBean
 import org.springframework.beans.factory.annotation.Autowired
 import org.springframework.cache.Cache
 import org.springframework.cache.CacheManager
+import org.springframework.cache.support.NoOpCache
 import org.springframework.stereotype.Component
 
 @Component
@@ -13,7 +14,7 @@ class CachingHostnameResolver(
     @Autowired(required = false)
     private val cacheManager: CacheManager?
 ): HostnameResolver, InitializingBean {
-    private lateinit var hostnameResolutionCache: Cache
+    private var hostnameResolutionCache: Cache = NoOpCache("hostnameResolutionCache")
 
     override fun afterPropertiesSet() {
         hostnameResolutionCache = cacheManager?.getCache("hostnameResolutionCache") ?: hostnameResolutionCache
