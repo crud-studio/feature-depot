@@ -4,11 +4,12 @@ import com.maxmind.geoip2.DatabaseReader
 import kotlinx.coroutines.GlobalScope
 import kotlinx.coroutines.async
 import mu.KotlinLogging
-import net.sf.ehcache.Cache
-import net.sf.ehcache.CacheManager
-import net.sf.ehcache.Element
 import org.springframework.beans.factory.InitializingBean
+import org.springframework.beans.factory.annotation.Autowired
 import org.springframework.boot.autoconfigure.condition.ConditionalOnProperty
+import org.springframework.cache.Cache
+import org.springframework.cache.CacheManager
+import org.springframework.cache.support.NoOpCache
 import org.springframework.core.io.ClassPathResource
 import org.springframework.core.io.Resource
 import org.springframework.stereotype.Component
@@ -19,25 +20,24 @@ import java.net.InetAddress
 @Component
 class CachingMaxmindGeoIpResolver(
     private val maxmindProperties: MaxmindProperties,
-    private val cacheManager: CacheManager
+    @Autowired(required = false)
+    private val cacheManager: CacheManager?
 ) : GeoIpResolver, InitializingBean {
     private lateinit var databaseReader: DatabaseReader
 
-    private lateinit var geoIpResolutionCache: Cache
+    private var geoIpResolutionCache: Cache = NoOpCache("geoIpResolutionCache")
 
     override fun afterPropertiesSet() {
         val resource: Resource = ClassPathResource(maxmindProperties.dbPath)
         val inputStream = resource.inputStream
         databaseReader = DatabaseReader.Builder(inputStream).build()
-
-        cacheManager.addCache(Cache("geoIpResolutionCache", 1200, false, false, 600, 600))
-        geoIpResolutionCache = cacheManager.getCache("geoIpResolutionCache")
+        geoIpResolutionCache = cacheManager?.getCache("geoIpResolutionCache") ?: geoIpResolutionCache
     }
 
     override fun getCountryIso(ip: String): String {
-        var cached = geoIpResolutionCache.get(ip)
+        val cached = geoIpResolutionCache.get(ip)
         if(cached != null) {
-            return cached.objectValue as String
+            return cached as String
         }
 
         GlobalScope.async {
@@ -49,12 +49,11 @@ class CachingMaxmindGeoIpResolver(
                 log.error(e) { "Failed to resolve IP [ $ip ] to countryIso" }
                 DefaultGeoIpResolver.getCountryIso(ip)
             }
-            geoIpResolutionCache.put(Element(ip, countryIso))
+            geoIpResolutionCache.put(ip, countryIso)
         }
 
-        cached = Element(ip, "resolving")
-        geoIpResolutionCache.put(cached)
-        return cached.objectValue as String
+        geoIpResolutionCache.put(ip, "resolving")
+        return ip
     }
 
     companion object {

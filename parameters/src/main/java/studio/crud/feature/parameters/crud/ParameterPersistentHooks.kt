@@ -4,24 +4,14 @@ import com.antelopesystem.crudframework.crud.hooks.interfaces.CreateFromHooks
 import com.antelopesystem.crudframework.crud.hooks.interfaces.CreateHooks
 import com.antelopesystem.crudframework.crud.hooks.interfaces.UpdateFromHooks
 import com.antelopesystem.crudframework.crud.hooks.interfaces.UpdateHooks
-import net.sf.ehcache.Cache
-import net.sf.ehcache.CacheManager
 import org.springframework.stereotype.Component
 import studio.crud.feature.parameters.enums.ParameterType
 import studio.crud.feature.parameters.exception.InvalidParameterTypeException
 import studio.crud.feature.parameters.exception.InvalidParameterValueException
 import studio.crud.feature.parameters.model.Parameter
-import javax.annotation.PostConstruct
 
 @Component
-class ParameterPersistentHooks(
-        private val cacheManager: CacheManager
-) : CreateHooks<Long, Parameter>, CreateFromHooks<Long, Parameter>, UpdateHooks<Long, Parameter>, UpdateFromHooks<Long, Parameter> {
-    @PostConstruct
-    private fun init() {
-        cacheManager.addCache(Cache("parameterCache", 1200, false, false, 600, 600))
-    }
-
+class ParameterPersistentHooks: CreateHooks<Long, Parameter>, CreateFromHooks<Long, Parameter>, UpdateHooks<Long, Parameter>, UpdateFromHooks<Long, Parameter> {
     override fun onCreate(entity: Parameter) {
         verifyParameterValue(entity)
     }
