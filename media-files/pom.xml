@@ -3,6 +3,7 @@
     <modelVersion>4.0.0</modelVersion>
     <artifactId>media-files</artifactId>
     <name>Media Files Feature</name>
+    <description>Media Files Feature</description>
     <version>${revision}</version>
 
     <parent>

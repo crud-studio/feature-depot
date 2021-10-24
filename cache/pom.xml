@@ -3,6 +3,7 @@
     <modelVersion>4.0.0</modelVersion>
     <artifactId>cache</artifactId>
     <name>Cache Feature</name>
+    <description>Cache Feature</description>
     <version>${revision}</version>
 
     <parent>

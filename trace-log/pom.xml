@@ -3,6 +3,7 @@
     <modelVersion>4.0.0</modelVersion>
     <artifactId>trace-log</artifactId>
     <name>TraceLog Feature</name>
+    <description>TraceLog Feature</description>
     <version>${revision}</version>
 
     <parent>

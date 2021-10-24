@@ -3,6 +3,7 @@
 	<modelVersion>4.0.0</modelVersion>
 	<artifactId>auth</artifactId>
 	<name>Auth Feature</name>
+	<description>Auth Feature</description>
 	<version>${revision}</version>
 
 	<parent>

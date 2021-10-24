@@ -3,6 +3,7 @@
     <modelVersion>4.0.0</modelVersion>
     <artifactId>jpa</artifactId>
     <name>Jpa Feature</name>
+    <description>Jpa Feature</description>
     <version>${revision}</version>
 
     <parent>

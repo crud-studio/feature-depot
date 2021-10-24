@@ -4,6 +4,7 @@
     <artifactId>{{featureName}}</artifactId>
     <version>${revision}</version>
     <name>{{featureNameCapitalized}} Feature</name>
+    <description>{{featureNameCapitalized}} Feature</description>
 
     <parent>
         <groupId>studio.crud.feature</groupId>
