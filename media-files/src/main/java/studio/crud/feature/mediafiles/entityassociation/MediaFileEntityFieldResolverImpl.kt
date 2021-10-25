@@ -2,21 +2,24 @@ package studio.crud.feature.mediafiles.entityassociation
 
 import com.antelopesystem.crudframework.model.BaseCrudEntity
 import org.reflections.Reflections
+import org.springframework.beans.factory.InitializingBean
 import org.springframework.stereotype.Component
+import studio.crud.feature.mediafiles.config.MediaFileFeatureProperties
 import studio.crud.feature.mediafiles.entityassociation.annotation.MediaFileField
 import studio.crud.feature.mediafiles.entityassociation.exception.MediaFileFieldNotFoundException
 import studio.crud.feature.mediafiles.entityassociation.exception.MediaFileFieldTypeNotMediaFileException
 import studio.crud.feature.mediafiles.model.MediaFile
 
 @Component
-class MediaFileEntityFieldResolverImpl : MediaFileEntityFieldResolver {
-
-    private val mediaFileEntityFieldMetadatas: List<MediaFileEntityFieldMetadata>
+class MediaFileEntityFieldResolverImpl(
+    val properties: MediaFileFeatureProperties
+) : MediaFileEntityFieldResolver, InitializingBean {
+    private lateinit var mediaFileEntityFieldMetadatas: List<MediaFileEntityFieldMetadata>
 
     private val mediaFileEntityFieldMetadataCache: MutableMap<Pair<String, String>, MediaFileEntityFieldMetadata?> = mutableMapOf()
 
-    init {
-        val reflections = Reflections("studio.crud")
+    override fun afterPropertiesSet() {
+        val reflections = Reflections(properties.basePackage)
         mediaFileEntityFieldMetadatas = reflections.getSubTypesOf(BaseCrudEntity::class.java).flatMap { clazz ->
             clazz.declaredFields
                 .filter { field -> field.isAnnotationPresent(MediaFileField::class.java) }
@@ -43,5 +46,4 @@ class MediaFileEntityFieldResolverImpl : MediaFileEntityFieldResolver {
         } ?: throw MediaFileFieldNotFoundException(entityName, fieldName)
     }
 }
-
 
