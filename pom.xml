@@ -297,13 +297,8 @@
                     <compilerPlugins>
                         <plugin>spring</plugin>
                         <plugin>jpa</plugin>
-                        <plugin>no-arg</plugin>
                     </compilerPlugins>
                     <jvmTarget>${java.version}</jvmTarget>
-                    <pluginOptions>
-                        <option>no-arg:annotation=studio.crud.sharedcommon.crud.jpa.annotations.RO</option>
-                        <option>no-arg:invokeInitializers=true</option>
-                    </pluginOptions>
                 </configuration>
                 <executions>
                     <execution>
