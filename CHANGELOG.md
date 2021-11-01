@@ -1,3 +1,10 @@
+## [0.1.1](https://github.com/crud-studio/feature-depot/compare/v0.1.0...v0.1.1) (2021-11-01)
+
+
+### Bug Fixes
+
+* **Dashboards:** add default values to dashboard ROs ([b6bc881](https://github.com/crud-studio/feature-depot/commit/b6bc88144ce41ccfecf3b44762b22817360dfe8f))
+
 # [0.1.0](https://github.com/crud-studio/feature-depot/compare/v0.0.1...v0.1.0) (2021-10-25)
 
 
