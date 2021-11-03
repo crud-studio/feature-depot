@@ -1,3 +1,10 @@
+## [0.1.2](https://github.com/crud-studio/feature-depot/compare/v0.1.1...v0.1.2) (2021-11-03)
+
+
+### Bug Fixes
+
+* **Auth:** add missing SecurityException import ([739cdbb](https://github.com/crud-studio/feature-depot/commit/739cdbb72ded10382a69e96f126d7a746eb7535d))
+
 ## [0.1.1](https://github.com/crud-studio/feature-depot/compare/v0.1.0...v0.1.1) (2021-11-01)
 
 
