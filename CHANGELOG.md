@@ -1,3 +1,11 @@
+# [0.3.0](https://github.com/crud-studio/feature-depot/compare/v0.2.0...v0.3.0) (2021-11-09)
+
+
+### Features
+
+* **Auth:** add entityUuid to MDC ([cec909c](https://github.com/crud-studio/feature-depot/commit/cec909c1dd690e29baea69ddfac52ba8eec62330))
+* **Auth:** Add issuer property, change entityUuid token claim to subject ([83ebb14](https://github.com/crud-studio/feature-depot/commit/83ebb14a7e433a3ae1b91a42a7a62ab46377b85f))
+
 # [0.2.0](https://github.com/crud-studio/feature-depot/compare/v0.1.2...v0.2.0) (2021-11-09)
 
 
