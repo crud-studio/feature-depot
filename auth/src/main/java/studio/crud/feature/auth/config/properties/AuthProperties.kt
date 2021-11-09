@@ -9,6 +9,8 @@ import studio.crud.feature.core.config.ValidatableProperties
 @Configuration
 @ConfigurationProperties(AuthProperties.PREFIX)
 class AuthProperties : ValidatableProperties() {
+    var tokenIssuer: String = "auth"
+
     var tokenLifetimeHours: Long = 24L
 
     var defaultAuthenticationMethodType: AuthenticationMethodType? = null

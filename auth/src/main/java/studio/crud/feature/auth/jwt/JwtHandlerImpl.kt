@@ -14,9 +14,9 @@ class JwtHandlerImpl(
 ) : JwtHandler {
     override fun generateToken(payload: TokenPayload): ParsedStatelessToken {
         val token = JWT.create()
-            .withIssuer("todo")
+            .withIssuer(authProperties.tokenIssuer)
             .withExpiresAt(payload.expiryDate)
-            .withClaim("entityUuid", payload.entityUuid)
+            .withSubject(payload.entityUuid)
             .withClaim("mfaRequired", payload.mfaRequired)
             .withClaim("passwordChangeRequired", payload.passwordChangeRequired)
             .sign(createAlgorithm())
@@ -29,7 +29,7 @@ class JwtHandlerImpl(
         return ParsedStatelessToken(
             token,
             TokenPayload(
-                decodedJWT.getClaim("entityUuid").asString(),
+                decodedJWT.subject,
                 decodedJWT.getClaim("mfaRequired").asBoolean(),
                 decodedJWT.getClaim("passwordChangeRequired").asBoolean(),
                 decodedJWT.expiresAt
@@ -39,7 +39,7 @@ class JwtHandlerImpl(
 
     private fun createVerifier(): JWTVerifier {
         return JWT.require(createAlgorithm())
-            .withIssuer("todo")
+            .withIssuer(authProperties.tokenIssuer)
             .build()
     }
 
