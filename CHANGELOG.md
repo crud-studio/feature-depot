@@ -1,3 +1,10 @@
+# [0.2.0](https://github.com/crud-studio/feature-depot/compare/v0.1.2...v0.2.0) (2021-11-09)
+
+
+### Features
+
+* **ci:** Add release to github ([445b414](https://github.com/crud-studio/feature-depot/commit/445b414f29cd6e68b4594bc27da9d54d6ed17af7))
+
 ## [0.1.2](https://github.com/crud-studio/feature-depot/compare/v0.1.1...v0.1.2) (2021-11-03)
 
 
