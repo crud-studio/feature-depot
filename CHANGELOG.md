@@ -1,3 +1,10 @@
+# [0.4.0](https://github.com/crud-studio/feature-depot/compare/v0.3.0...v0.4.0) (2021-11-14)
+
+
+### Features
+
+* **Auth:** add ability to aggregate security configs ([d85cafa](https://github.com/crud-studio/feature-depot/commit/d85cafa78fc0601c4f4c6ad5f28c9c3711ece86e))
+
 # [0.3.0](https://github.com/crud-studio/feature-depot/compare/v0.2.0...v0.3.0) (2021-11-09)
 
 
