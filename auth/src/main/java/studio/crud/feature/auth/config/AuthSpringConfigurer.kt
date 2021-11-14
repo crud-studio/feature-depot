@@ -23,7 +23,7 @@ import studio.crud.feature.auth.filter.AuthenticationFilter
 import studio.crud.feature.auth.provider.TokenAuthenticationProvider
 
 @Configuration
-class AuthSpringConfig : WebSecurityConfigurerAdapter(), WebMvcConfigurer {
+class AuthSpringConfigurer : WebSecurityConfigurerAdapter(), WebMvcConfigurer, HttpSecurityConfigurer {
 
     @Autowired
     private lateinit var authenticationFilter: AuthenticationFilter
@@ -51,20 +51,21 @@ class AuthSpringConfig : WebSecurityConfigurerAdapter(), WebMvcConfigurer {
         auth.authenticationProvider(tokenAuthenticationProvider)
     }
 
-    override fun configure(http: HttpSecurity) {
+    override fun configureHttp(http: HttpSecurity) {
         http
             .csrf().disable()
             .sessionManagement().disable()
             .exceptionHandling()
             .authenticationEntryPoint(restAuthenticationEntryPoint)
             .and()
-            .authorizeRequests()
-            .antMatchers("$SECURE_API_PATH/**").authenticated()
-            .and()
             .addFilterBefore(authenticationFilter, UsernamePasswordAuthenticationFilter::class.java)
             .cors()
             .and()
             .sessionManagement().sessionCreationPolicy(SessionCreationPolicy.STATELESS)
+            .and()
+            .authorizeRequests()
+            .antMatchers("$SECURE_API_PATH/**").authenticated()
+
     }
 
     @Bean
