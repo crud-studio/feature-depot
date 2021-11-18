@@ -1,3 +1,10 @@
+# [0.5.0](https://github.com/crud-studio/feature-depot/compare/v0.4.0...v0.5.0) (2021-11-18)
+
+
+### Features
+
+* **Notes:** add notes feature ([66d31ed](https://github.com/crud-studio/feature-depot/commit/66d31edc1359ce2d5aab0dc612d29a690f011cc6))
+
 # [0.4.0](https://github.com/crud-studio/feature-depot/compare/v0.3.0...v0.4.0) (2021-11-14)
 
 
