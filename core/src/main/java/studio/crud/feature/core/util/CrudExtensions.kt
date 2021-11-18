@@ -7,6 +7,7 @@ import com.antelopesystem.crudframework.crud.hooks.update.CRUDPreUpdateHook
 import com.antelopesystem.crudframework.crud.model.CRUDRequestBuilder
 import com.antelopesystem.crudframework.model.BaseCrudEntity
 import com.antelopesystem.crudframework.modelfilter.DynamicModelFilter
+import com.antelopesystem.crudframework.modelfilter.FilterField
 import com.antelopesystem.crudframework.modelfilter.dsl.where
 import com.antelopesystem.crudframework.modelfilter.enums.FilterFieldOperation
 
@@ -54,8 +55,13 @@ class ExecuteWrapper<ResultType>(private val function: () -> ResultType) {
     }
 }
 
+fun DynamicModelFilter.getField(name: String, operation: FilterFieldOperation): FilterField? {
+    return this.filterFields.find { it.fieldName == name && it.operation == operation }
+}
+
+
 fun <T> DynamicModelFilter.getFieldValue(name: String, operation: FilterFieldOperation, clazz: Class<T>): T? {
-    val field = this.filterFields.find { it.fieldName == name && it.operation == operation } ?: return null
+    val field = this.getField(name, operation) ?: return null
     return field.value1 as T?
 }
 

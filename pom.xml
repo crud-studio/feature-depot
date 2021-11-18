@@ -79,6 +79,7 @@
         <module>quartz</module>
         <module>soundex</module>
         <module>cache</module>
+        <module>notes</module>
     </modules>
 
     <dependencies>

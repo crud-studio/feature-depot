@@ -3,6 +3,7 @@ package studio.crud.feature.jpa.web
 import com.antelopesystem.crudframework.crud.handler.CrudHandler
 import com.antelopesystem.crudframework.crud.model.CRUDRequestBuilder
 import com.antelopesystem.crudframework.modelfilter.DynamicModelFilter
+import com.antelopesystem.crudframework.modelfilter.dsl.where
 import org.springframework.beans.factory.annotation.Autowired
 import org.springframework.core.GenericTypeResolver
 import org.springframework.http.ResponseEntity
@@ -60,9 +61,10 @@ abstract class AbstractErrorHandlingJpaCrudController<Entity: AbstractJpaEntity,
     @ResponseBody
     open fun search(@RequestBody(required = false) filter: DynamicModelFilter? = null): ResponseEntity<ResultRO<*>> {
         verifyOperation(CrudOperationType.Index)
-        preSearchInternal(filter)
+        val actualFilter = filter ?: where {}
+        preSearchInternal(actualFilter)
         return wrapResult {
-            val builder = crudHandler.index(filter, entityClazz, indexRoClazz)
+            val builder = crudHandler.index(actualFilter, entityClazz, indexRoClazz)
             builder
                 .enforceIfNecessary()
                 .execute()
@@ -73,9 +75,10 @@ abstract class AbstractErrorHandlingJpaCrudController<Entity: AbstractJpaEntity,
     @ResponseBody
     open fun searchCount(@RequestBody(required = false) filter: DynamicModelFilter? = null): ResponseEntity<ResultRO<*>> {
         verifyOperation(CrudOperationType.Index)
-        preSearchInternal(filter)
+        val actualFilter = filter ?: where {}
+        preSearchInternal(actualFilter)
         return wrapResult {
-            val builder = crudHandler.index(filter, entityClazz)
+            val builder = crudHandler.index(actualFilter, entityClazz)
             builder.enforceIfNecessary()
             builder.fromCache().count()
         }
@@ -203,7 +206,7 @@ abstract class AbstractErrorHandlingJpaCrudController<Entity: AbstractJpaEntity,
     /**
      * Ran before a show operation
      */
-    open fun preSearch(filter: DynamicModelFilter?) {}
+    open fun preSearch(filter: DynamicModelFilter) {}
 
     /**
      * Ran before a create operation
@@ -229,7 +232,7 @@ abstract class AbstractErrorHandlingJpaCrudController<Entity: AbstractJpaEntity,
         ) }
     }
 
-    private fun preSearchInternal(filter: DynamicModelFilter?) {
+    private fun preSearchInternal(filter: DynamicModelFilter) {
         preSearch(filter)
         globalHooks.forEach { globalHook -> globalHook.preSearch(
             filter,
