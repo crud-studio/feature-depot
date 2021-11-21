@@ -47,8 +47,8 @@
         <!-- Projec t -->
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <java.version>1.8</java.version>
-        <kotlin.version>1.3.72</kotlin.version>
-        <kotlinx.coroutines.version>1.3.8</kotlinx.coroutines.version>
+        <kotlin.version>1.6.0</kotlin.version>
+        <kotlinx.coroutines.version>1.5.2</kotlinx.coroutines.version>
         <spring.boot.version>2.5.2</spring.boot.version>
         <spring.cloud.version>2020.0.3</spring.cloud.version>
         <crud.framework.version>0.5.1</crud.framework.version>
