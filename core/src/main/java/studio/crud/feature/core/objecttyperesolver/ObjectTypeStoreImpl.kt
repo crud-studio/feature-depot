@@ -8,7 +8,7 @@ import kotlin.reflect.KClass
 @Component
 class ObjectTypeStoreImpl(
     @Autowired(required = false)
-    private val resolutionProviders: List<ObjectTypeResolutionProvider>
+    private val resolutionProviders: List<ObjectTypeResolutionProvider>?
 ) : ObjectTypeStore, InitializingBean {
     private lateinit var resolutions: Set<ObjectResolution>
     private lateinit var resolutionProvidersByNameCache: Map<String, ObjectResolution>
@@ -16,7 +16,7 @@ class ObjectTypeStoreImpl(
     private lateinit var resolutionProvidersByClazzCache: Map<KClass<*>, ObjectResolution>
 
     override fun afterPropertiesSet() {
-        resolutions = resolutionProviders.flatMap { it.getResolutions() }.toSet()
+        resolutions = resolutionProviders?.flatMap { it.getResolutions() }?.toSet() ?: emptySet()
         resolutionProvidersByNameCache = resolutions.associateBy { resolution -> resolution.name }
         resolutionProvidersByAliasCache = resolutions.associateBy { resolution -> resolution.alias }
         resolutionProvidersByClazzCache = resolutions.associateBy { resolution -> resolution.clazz }
