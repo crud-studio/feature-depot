@@ -1,3 +1,16 @@
+# [0.6.0](https://github.com/crud-studio/feature-depot/compare/v0.5.0...v0.6.0) (2021-11-21)
+
+
+### Bug Fixes
+
+* **Core:** Fix issue when no object resolvers exist ([5022595](https://github.com/crud-studio/feature-depot/commit/502259559aa249808f40e20ec4455f37e4bb32b3))
+* **Core:** Fix issue with ValidatableProperties validateInternal not being overridable after Kotlin upgrade ([67414df](https://github.com/crud-studio/feature-depot/commit/67414df2f87e36933d7dc83755d53b24fdf7ed60))
+
+
+### Features
+
+* **Kotlin:** Upgrade Kotlin to 1.6 ([9f2f5ad](https://github.com/crud-studio/feature-depot/commit/9f2f5ad3364ee98e7a3503e5b453b50eb3e99fa9))
+
 # [0.5.0](https://github.com/crud-studio/feature-depot/compare/v0.4.0...v0.5.0) (2021-11-18)
 
 
