@@ -22,5 +22,5 @@ abstract class ValidatableProperties : Validator {
      * @param prefix The full prefix to the current ConfigurationProperties class
      * @param errors The [Errors] object provided by Spring
      */
-    fun validateInternal(prefix: String, errors: Errors) {}
+    open fun validateInternal(prefix: String, errors: Errors) {}
 }
