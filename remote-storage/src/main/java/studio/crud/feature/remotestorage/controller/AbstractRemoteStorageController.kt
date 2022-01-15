@@ -1,6 +1,6 @@
 package studio.crud.feature.remotestorage.controller
 
-import com.antelopesystem.crudframework.modelfilter.DynamicModelFilter
+import studio.crud.crudframework.modelfilter.DynamicModelFilter
 import org.springframework.beans.factory.annotation.Autowired
 import org.springframework.http.ResponseEntity
 import org.springframework.web.bind.annotation.*

@@ -1,8 +1,8 @@
 package studio.crud.feature.mediafiles.model
 
-import com.antelopesystem.crudframework.fieldmapper.annotation.DefaultMappingTarget
-import com.antelopesystem.crudframework.fieldmapper.annotation.MappedField
-import com.antelopesystem.crudframework.fieldmapper.annotation.MappedFields
+import studio.crud.crudframework.fieldmapper.annotation.DefaultMappingTarget
+import studio.crud.crudframework.fieldmapper.annotation.MappedField
+import studio.crud.crudframework.fieldmapper.annotation.MappedFields
 import studio.crud.feature.jpa.model.AbstractJpaUpdatableEntity
 import studio.crud.feature.mediafiles.enums.MediaFileAclMode
 import studio.crud.feature.mediafiles.enums.MediaFileStorageType

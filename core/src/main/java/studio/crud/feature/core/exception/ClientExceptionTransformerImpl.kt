@@ -1,6 +1,6 @@
 package studio.crud.feature.core.exception
 
-import com.antelopesystem.crudframework.crud.exception.*
+import studio.crud.crudframework.crud.exception.*
 import org.apache.commons.lang3.exception.ExceptionUtils
 import org.apache.commons.logging.LogFactory
 import org.springframework.beans.factory.annotation.Value

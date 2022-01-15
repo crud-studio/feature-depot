@@ -51,7 +51,7 @@
         <kotlinx.coroutines.version>1.5.2</kotlinx.coroutines.version>
         <spring.boot.version>2.5.2</spring.boot.version>
         <spring.cloud.version>2020.0.3</spring.cloud.version>
-        <crud.framework.version>0.5.1</crud.framework.version>
+        <crud.framework.version>0.7.0</crud.framework.version>
         <slf4j.version>1.7.2</slf4j.version>
         <log4j2.version>2.13.3</log4j2.version>
         <kotlin.logging.version>1.12.0</kotlin.logging.version>
@@ -104,7 +104,7 @@
 
         <!-- CRUD Framework -->
         <dependency>
-            <groupId>com.antelopesystem.crudframework</groupId>
+            <groupId>studio.crud.crudframework</groupId>
             <artifactId>crud-framework-core</artifactId>
         </dependency>
 
@@ -192,42 +192,42 @@
             </dependency>
             <!-- CRUD Framework -->
             <dependency>
-                <groupId>com.antelopesystem.crudframework</groupId>
+                <groupId>studio.crud.crudframework</groupId>
                 <artifactId>crud-framework-core</artifactId>
                 <version>${crud.framework.version}</version>
                 <optional>true</optional>
             </dependency>
 
             <dependency>
-                <groupId>com.antelopesystem.crudframework</groupId>
+                <groupId>studio.crud.crudframework</groupId>
                 <artifactId>crud-framework-utils</artifactId>
                 <version>${crud.framework.version}</version>
                 <optional>true</optional>
             </dependency>
 
             <dependency>
-                <groupId>com.antelopesystem.crudframework</groupId>
+                <groupId>studio.crud.crudframework</groupId>
                 <artifactId>crud-framework-fieldmapper</artifactId>
                 <version>${crud.framework.version}</version>
                 <optional>true</optional>
             </dependency>
 
             <dependency>
-                <groupId>com.antelopesystem.crudframework</groupId>
+                <groupId>studio.crud.crudframework</groupId>
                 <artifactId>crud-framework-dsl</artifactId>
                 <version>${crud.framework.version}</version>
                 <optional>true</optional>
             </dependency>
 
             <dependency>
-                <groupId>com.antelopesystem.crudframework</groupId>
+                <groupId>studio.crud.crudframework</groupId>
                 <artifactId>crud-framework-hibernate5-connector</artifactId>
                 <version>${crud.framework.version}</version>
                 <optional>true</optional>
             </dependency>
 
             <dependency>
-                <groupId>com.antelopesystem.crudframework</groupId>
+                <groupId>studio.crud.crudframework</groupId>
                 <artifactId>crud-framework-mongo-connector</artifactId>
                 <version>${crud.framework.version}</version>
                 <optional>true</optional>
@@ -500,7 +500,7 @@
                 <repository>
                     <id>github</id>
                     <name>GitHub Packages</name>
-                    <url>https://maven.pkg.github.com/crud-studio/feature-depot</url>
+                    <url>https://maven.pkg.github.com/crud-studio/§</url>
                 </repository>
             </distributionManagement>
         </profile>

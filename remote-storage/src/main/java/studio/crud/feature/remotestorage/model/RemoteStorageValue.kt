@@ -1,8 +1,8 @@
 package studio.crud.feature.remotestorage.model
 
-import com.antelopesystem.crudframework.crud.annotation.Deleteable
-import com.antelopesystem.crudframework.fieldmapper.annotation.DefaultMappingTarget
-import com.antelopesystem.crudframework.fieldmapper.annotation.MappedField
+import studio.crud.crudframework.crud.annotation.Deleteable
+import studio.crud.crudframework.fieldmapper.annotation.DefaultMappingTarget
+import studio.crud.crudframework.fieldmapper.annotation.MappedField
 import studio.crud.feature.jpa.model.AbstractJpaUpdatableEntity
 import studio.crud.feature.remotestorage.ro.RemoteStorageValueDTO
 import javax.persistence.Column

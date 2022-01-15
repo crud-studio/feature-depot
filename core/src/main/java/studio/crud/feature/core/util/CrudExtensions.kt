@@ -1,15 +1,15 @@
 package studio.crud.feature.core.util
 
-import com.antelopesystem.crudframework.crud.handler.CrudHandler
-import com.antelopesystem.crudframework.crud.hooks.update.CRUDOnUpdateHook
-import com.antelopesystem.crudframework.crud.hooks.update.CRUDPostUpdateHook
-import com.antelopesystem.crudframework.crud.hooks.update.CRUDPreUpdateHook
-import com.antelopesystem.crudframework.crud.model.CRUDRequestBuilder
-import com.antelopesystem.crudframework.model.BaseCrudEntity
-import com.antelopesystem.crudframework.modelfilter.DynamicModelFilter
-import com.antelopesystem.crudframework.modelfilter.FilterField
-import com.antelopesystem.crudframework.modelfilter.dsl.where
-import com.antelopesystem.crudframework.modelfilter.enums.FilterFieldOperation
+import studio.crud.crudframework.crud.handler.CrudHandler
+import studio.crud.crudframework.crud.hooks.update.CRUDOnUpdateHook
+import studio.crud.crudframework.crud.hooks.update.CRUDPostUpdateHook
+import studio.crud.crudframework.crud.hooks.update.CRUDPreUpdateHook
+import studio.crud.crudframework.crud.model.CRUDRequestBuilder
+import studio.crud.crudframework.model.BaseCrudEntity
+import studio.crud.crudframework.modelfilter.DynamicModelFilter
+import studio.crud.crudframework.modelfilter.FilterField
+import studio.crud.crudframework.modelfilter.dsl.where
+import studio.crud.crudframework.modelfilter.enums.FilterFieldOperation
 
 inline fun <reified EntityType : BaseCrudEntity<Long>> CrudHandler.updateById(id: Long, crossinline callback: (entity: EntityType) -> Unit): CRUDRequestBuilder<CRUDPreUpdateHook<Long, EntityType>, CRUDOnUpdateHook<Long, EntityType>, CRUDPostUpdateHook<Long, EntityType>, MutableList<EntityType>> {
     return this.updateByFilter(where { "id" Equal id }, EntityType::class.java)

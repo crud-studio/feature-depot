@@ -1,9 +1,9 @@
 package studio.crud.feature.parameters.crud
 
-import com.antelopesystem.crudframework.crud.hooks.interfaces.CreateFromHooks
-import com.antelopesystem.crudframework.crud.hooks.interfaces.CreateHooks
-import com.antelopesystem.crudframework.crud.hooks.interfaces.UpdateFromHooks
-import com.antelopesystem.crudframework.crud.hooks.interfaces.UpdateHooks
+import studio.crud.crudframework.crud.hooks.interfaces.CreateFromHooks
+import studio.crud.crudframework.crud.hooks.interfaces.CreateHooks
+import studio.crud.crudframework.crud.hooks.interfaces.UpdateFromHooks
+import studio.crud.crudframework.crud.hooks.interfaces.UpdateHooks
 import org.springframework.stereotype.Component
 import studio.crud.feature.parameters.enums.ParameterType
 import studio.crud.feature.parameters.exception.InvalidParameterTypeException

@@ -1,9 +1,9 @@
 package studio.crud.feature.parameters.model
 
-import com.antelopesystem.crudframework.crud.annotation.CachedBy
-import com.antelopesystem.crudframework.crud.annotation.Deleteable
-import com.antelopesystem.crudframework.fieldmapper.annotation.DefaultMappingTarget
-import com.antelopesystem.crudframework.fieldmapper.annotation.MappedField
+import studio.crud.crudframework.crud.annotation.CachedBy
+import studio.crud.crudframework.crud.annotation.Deleteable
+import studio.crud.crudframework.fieldmapper.annotation.DefaultMappingTarget
+import studio.crud.crudframework.fieldmapper.annotation.MappedField
 import studio.crud.feature.jpa.model.AbstractJpaUpdatableEntity
 import studio.crud.feature.parameters.enums.ParameterType
 import studio.crud.feature.parameters.ro.ParameterRO

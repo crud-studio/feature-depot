@@ -1,9 +1,9 @@
 package studio.crud.feature.jpa.web
 
-import com.antelopesystem.crudframework.crud.handler.CrudHandler
-import com.antelopesystem.crudframework.crud.model.CRUDRequestBuilder
-import com.antelopesystem.crudframework.modelfilter.DynamicModelFilter
-import com.antelopesystem.crudframework.modelfilter.dsl.where
+import studio.crud.crudframework.crud.handler.CrudHandler
+import studio.crud.crudframework.crud.model.CRUDRequestBuilder
+import studio.crud.crudframework.modelfilter.DynamicModelFilter
+import studio.crud.crudframework.modelfilter.dsl.where
 import org.springframework.beans.factory.annotation.Autowired
 import org.springframework.core.GenericTypeResolver
 import org.springframework.http.ResponseEntity

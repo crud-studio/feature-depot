@@ -1,6 +1,6 @@
 package studio.crud.feature.mediafiles.entityassociation
 
-import com.antelopesystem.crudframework.model.BaseCrudEntity
+import studio.crud.crudframework.model.BaseCrudEntity
 import org.reflections.Reflections
 import org.springframework.beans.factory.InitializingBean
 import org.springframework.stereotype.Component

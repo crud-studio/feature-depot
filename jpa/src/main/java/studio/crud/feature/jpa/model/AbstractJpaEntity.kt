@@ -1,8 +1,8 @@
 package studio.crud.feature.jpa.model
 
-import com.antelopesystem.crudframework.fieldmapper.annotation.MappedField
-import com.antelopesystem.crudframework.jpa.annotation.JpaCrudEntity
-import com.antelopesystem.crudframework.model.BaseCrudEntity
+import studio.crud.crudframework.fieldmapper.annotation.MappedField
+import studio.crud.crudframework.jpa.annotation.JpaCrudEntity
+import studio.crud.crudframework.model.BaseCrudEntity
 import com.vladmihalcea.hibernate.type.json.JsonStringType
 import org.hibernate.annotations.TypeDef
 import studio.crud.feature.jpa.ro.AbstractJpaRO

@@ -1,7 +1,7 @@
 package studio.crud.feature.auth.authentication.mfa
 
-import com.antelopesystem.crudframework.crud.handler.CrudHandler
-import com.antelopesystem.crudframework.utils.component.componentmap.annotation.ComponentMap
+import studio.crud.crudframework.crud.handler.CrudHandler
+import studio.crud.crudframework.utils.component.componentmap.annotation.ComponentMap
 import org.springframework.stereotype.Service
 import studio.crud.feature.auth.authentication.mfa.enums.MfaType
 import studio.crud.feature.auth.authentication.mfa.model.MfaAvailableProviderDTO

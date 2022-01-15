@@ -1,8 +1,8 @@
 package studio.crud.feature.auth.authentication.rules
 
-import com.antelopesystem.crudframework.crud.handler.CrudHandler
-import com.antelopesystem.crudframework.modelfilter.dsl.filter
-import com.antelopesystem.crudframework.utils.component.componentmap.annotation.ComponentMap
+import studio.crud.crudframework.crud.handler.CrudHandler
+import studio.crud.crudframework.modelfilter.dsl.filter
+import studio.crud.crudframework.utils.component.componentmap.annotation.ComponentMap
 import studio.crud.feature.auth.entity.model.Entity
 import studio.crud.feature.auth.authentication.rules.action.base.RuleActionHandler
 import studio.crud.feature.auth.authentication.rules.anomaly.base.DeviceAnomalyHandler

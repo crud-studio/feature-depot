@@ -1,7 +1,7 @@
 package studio.crud.feature.dashboard
 
-import com.antelopesystem.crudframework.crud.handler.CrudHandler
-import com.antelopesystem.crudframework.modelfilter.dsl.where
+import studio.crud.crudframework.crud.handler.CrudHandler
+import studio.crud.crudframework.modelfilter.dsl.where
 import org.springframework.stereotype.Service
 import studio.crud.feature.dashboard.model.DashboardWidget
 import studio.crud.feature.dashboard.ro.DashboardDataDTO

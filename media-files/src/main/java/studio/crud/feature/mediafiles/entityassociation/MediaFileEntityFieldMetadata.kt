@@ -1,6 +1,6 @@
 package studio.crud.feature.mediafiles.entityassociation
 
-import com.antelopesystem.crudframework.model.BaseCrudEntity
+import studio.crud.crudframework.model.BaseCrudEntity
 import studio.crud.feature.mediafiles.entityassociation.annotation.MediaFileField
 import studio.crud.feature.mediafiles.enums.MediaFileAclMode
 import java.lang.reflect.Field

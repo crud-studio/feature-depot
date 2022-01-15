@@ -1,6 +1,6 @@
 package studio.crud.feature.soundex.annotation
 
-import com.antelopesystem.crudframework.crud.annotation.WithHooks
+import studio.crud.crudframework.crud.annotation.WithHooks
 import studio.crud.feature.soundex.SoundexPersistentHooks
 
 /**

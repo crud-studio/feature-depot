@@ -1,6 +1,6 @@
 package studio.crud.feature.quartz
 
-import com.antelopesystem.crudframework.utils.component.startup.annotation.PostStartUp
+import studio.crud.crudframework.utils.component.startup.annotation.PostStartUp
 import mu.KotlinLogging
 import org.quartz.Scheduler
 import org.springframework.beans.factory.annotation.Autowired

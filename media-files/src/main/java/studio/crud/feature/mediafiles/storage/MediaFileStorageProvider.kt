@@ -1,6 +1,6 @@
 package studio.crud.feature.mediafiles.storage
 
-import com.antelopesystem.crudframework.utils.component.componentmap.annotation.ComponentMapKey
+import studio.crud.crudframework.utils.component.componentmap.annotation.ComponentMapKey
 import org.springframework.web.multipart.MultipartFile
 import studio.crud.feature.mediafiles.exception.MediaFileDownloadFailedException
 import studio.crud.feature.mediafiles.exception.MediaFileUploadFailedException

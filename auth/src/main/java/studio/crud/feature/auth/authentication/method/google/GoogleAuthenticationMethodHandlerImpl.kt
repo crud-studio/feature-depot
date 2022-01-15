@@ -1,7 +1,7 @@
 package studio.crud.feature.auth.authentication.method.google
 
-import com.antelopesystem.crudframework.crud.handler.CrudHandler
-import com.antelopesystem.crudframework.modelfilter.dsl.where
+import studio.crud.crudframework.crud.handler.CrudHandler
+import studio.crud.crudframework.modelfilter.dsl.where
 import com.google.api.client.googleapis.auth.oauth2.GoogleIdToken
 import com.google.api.client.googleapis.auth.oauth2.GoogleIdTokenVerifier
 import com.google.api.client.http.HttpTransport

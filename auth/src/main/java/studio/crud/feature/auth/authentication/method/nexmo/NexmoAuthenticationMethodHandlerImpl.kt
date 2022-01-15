@@ -1,7 +1,7 @@
 package studio.crud.feature.auth.authentication.method.nexmo
 
-import com.antelopesystem.crudframework.crud.handler.CrudHandler
-import com.antelopesystem.crudframework.modelfilter.dsl.where
+import studio.crud.crudframework.crud.handler.CrudHandler
+import studio.crud.crudframework.modelfilter.dsl.where
 import org.springframework.boot.autoconfigure.condition.ConditionalOnProperty
 import org.springframework.stereotype.Component
 import studio.crud.feature.auth.authentication.method.base.AuthenticationMethodHandler

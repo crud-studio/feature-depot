@@ -1,6 +1,6 @@
 package studio.crud.feature.jpa.model
 
-import com.antelopesystem.crudframework.fieldmapper.annotation.MappedField
+import studio.crud.crudframework.fieldmapper.annotation.MappedField
 import org.hibernate.annotations.CreationTimestamp
 import studio.crud.feature.jpa.ro.AbstractJpaUpdatableRO
 import java.util.*

@@ -1,6 +1,6 @@
 package studio.crud.feature.core.web.model
 
-import com.antelopesystem.crudframework.ro.PagingRO
+import studio.crud.crudframework.ro.PagingRO
 import com.fasterxml.jackson.annotation.JsonIgnore
 import java.io.Serializable
 

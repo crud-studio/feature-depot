@@ -1,6 +1,6 @@
 package studio.crud.feature.reports
 
-import com.antelopesystem.crudframework.crud.handler.CrudHandler
+import studio.crud.crudframework.crud.handler.CrudHandler
 import org.springframework.stereotype.Component
 import org.springframework.transaction.annotation.Transactional
 import studio.crud.feature.reports.enums.ReportParameterType

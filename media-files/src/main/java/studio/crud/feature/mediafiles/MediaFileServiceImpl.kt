@@ -1,6 +1,6 @@
 package studio.crud.feature.mediafiles
 
-import com.antelopesystem.crudframework.crud.handler.CrudHandler
+import studio.crud.crudframework.crud.handler.CrudHandler
 import mu.KotlinLogging
 import org.springframework.beans.factory.annotation.Autowired
 import org.springframework.http.HttpStatus

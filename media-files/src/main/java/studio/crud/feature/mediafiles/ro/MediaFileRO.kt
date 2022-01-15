@@ -1,7 +1,7 @@
 package studio.crud.feature.mediafiles.ro
 
-import com.antelopesystem.crudframework.fieldmapper.annotation.DefaultMappingTarget
-import com.antelopesystem.crudframework.fieldmapper.annotation.MappedField
+import studio.crud.crudframework.fieldmapper.annotation.DefaultMappingTarget
+import studio.crud.crudframework.fieldmapper.annotation.MappedField
 import studio.crud.feature.jpa.ro.AbstractJpaUpdatableRO
 import studio.crud.feature.mediafiles.model.MediaFile
 

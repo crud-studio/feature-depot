@@ -1,6 +1,6 @@
 package studio.crud.feature.remotestorage
 
-import com.antelopesystem.crudframework.modelfilter.DynamicModelFilter
+import studio.crud.crudframework.modelfilter.DynamicModelFilter
 import studio.crud.feature.remotestorage.ro.RemoteStorageValueDTO
 
 interface RemoteStorageService {

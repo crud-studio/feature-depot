@@ -35,7 +35,7 @@
         </dependency>
 
         <dependency>
-            <groupId>com.antelopesystem.crudframework</groupId>
+            <groupId>studio.crud.crudframework</groupId>
             <artifactId>crud-framework-hibernate5-connector</artifactId>
         </dependency>
 

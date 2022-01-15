@@ -1,8 +1,8 @@
 package studio.crud.feature.notes.model
 
-import com.antelopesystem.crudframework.crud.annotation.Immutable
-import com.antelopesystem.crudframework.fieldmapper.annotation.DefaultMappingTarget
-import com.antelopesystem.crudframework.fieldmapper.annotation.MappedField
+import studio.crud.crudframework.crud.annotation.Immutable
+import studio.crud.crudframework.fieldmapper.annotation.DefaultMappingTarget
+import studio.crud.crudframework.fieldmapper.annotation.MappedField
 import studio.crud.feature.jpa.model.AbstractJpaUpdatableEntity
 import studio.crud.feature.notes.ro.NoteRO
 import javax.persistence.Column

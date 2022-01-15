@@ -1,7 +1,7 @@
 package studio.crud.feature.auth.authentication.method.facebook
 
-import com.antelopesystem.crudframework.crud.handler.CrudHandler
-import com.antelopesystem.crudframework.modelfilter.dsl.where
+import studio.crud.crudframework.crud.handler.CrudHandler
+import studio.crud.crudframework.modelfilter.dsl.where
 import com.mashape.unirest.http.Unirest
 import org.springframework.boot.autoconfigure.condition.ConditionalOnProperty
 import org.springframework.stereotype.Component

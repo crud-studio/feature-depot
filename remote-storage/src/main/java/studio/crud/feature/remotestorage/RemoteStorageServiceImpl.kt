@@ -1,9 +1,9 @@
 package studio.crud.feature.remotestorage
 
-import com.antelopesystem.crudframework.crud.handler.CrudHandler
-import com.antelopesystem.crudframework.modelfilter.DynamicModelFilter
-import com.antelopesystem.crudframework.modelfilter.dsl.and
-import com.antelopesystem.crudframework.modelfilter.dsl.where
+import studio.crud.crudframework.crud.handler.CrudHandler
+import studio.crud.crudframework.modelfilter.DynamicModelFilter
+import studio.crud.crudframework.modelfilter.dsl.and
+import studio.crud.crudframework.modelfilter.dsl.where
 import org.springframework.beans.factory.annotation.Autowired
 import org.springframework.stereotype.Service
 import studio.crud.feature.core.audit.util.CurrentEntityResolver

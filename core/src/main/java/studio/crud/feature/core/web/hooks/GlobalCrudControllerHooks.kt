@@ -1,7 +1,7 @@
 package studio.crud.feature.core.web.hooks
 
-import com.antelopesystem.crudframework.model.BaseCrudEntity
-import com.antelopesystem.crudframework.modelfilter.DynamicModelFilter
+import studio.crud.crudframework.model.BaseCrudEntity
+import studio.crud.crudframework.modelfilter.DynamicModelFilter
 import kotlin.reflect.KClass
 
 

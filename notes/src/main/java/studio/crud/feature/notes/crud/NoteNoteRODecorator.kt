@@ -1,6 +1,6 @@
 package studio.crud.feature.notes.crud
 
-import com.antelopesystem.crudframework.crud.decorator.ObjectDecoratorBase
+import studio.crud.crudframework.crud.decorator.ObjectDecoratorBase
 import org.springframework.beans.factory.annotation.Autowired
 import org.springframework.stereotype.Component
 import studio.crud.feature.notes.model.Note

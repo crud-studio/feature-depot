@@ -1,6 +1,6 @@
 package studio.crud.feature.auth.authentication.mfa.provider.base
 
-import com.antelopesystem.crudframework.utils.component.componentmap.annotation.ComponentMapKey
+import studio.crud.crudframework.utils.component.componentmap.annotation.ComponentMapKey
 import studio.crud.feature.auth.authentication.mfa.enums.MfaType
 import studio.crud.feature.auth.authentication.model.CustomParamsDTO
 import studio.crud.feature.auth.entity.model.Entity

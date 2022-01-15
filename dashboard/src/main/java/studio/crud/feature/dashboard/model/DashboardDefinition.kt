@@ -1,8 +1,8 @@
 package studio.crud.feature.dashboard.model
 
-import com.antelopesystem.crudframework.crud.annotation.Immutable
-import com.antelopesystem.crudframework.fieldmapper.annotation.DefaultMappingTarget
-import com.antelopesystem.crudframework.fieldmapper.annotation.MappedField
+import studio.crud.crudframework.crud.annotation.Immutable
+import studio.crud.crudframework.fieldmapper.annotation.DefaultMappingTarget
+import studio.crud.crudframework.fieldmapper.annotation.MappedField
 import org.hibernate.annotations.Fetch
 import org.hibernate.annotations.FetchMode
 import studio.crud.feature.dashboard.ro.DashboardDefinitionRO

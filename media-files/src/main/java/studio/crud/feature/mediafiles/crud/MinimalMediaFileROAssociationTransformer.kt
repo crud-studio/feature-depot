@@ -1,7 +1,7 @@
 package studio.crud.feature.mediafiles.crud
 
-import com.antelopesystem.crudframework.fieldmapper.transformer.base.FieldTransformerBase
-import com.antelopesystem.crudframework.utils.utils.ReflectionUtils
+import studio.crud.crudframework.fieldmapper.transformer.base.FieldTransformerBase
+import studio.crud.crudframework.utils.utils.ReflectionUtils
 import org.springframework.stereotype.Component
 import studio.crud.feature.mediafiles.MediaFileHandler
 import studio.crud.feature.mediafiles.entityassociation.MediaFileEntityFieldResolver

@@ -1,6 +1,6 @@
 package studio.crud.feature.dashboard.widget
 
-import com.antelopesystem.crudframework.utils.component.componentmap.annotation.ComponentMap
+import studio.crud.crudframework.utils.component.componentmap.annotation.ComponentMap
 import org.springframework.stereotype.Component
 import studio.crud.feature.dashboard.enums.DashboardWidgetType
 import studio.crud.feature.dashboard.exception.NoHandlerFoundForDashboardWidgetTypeException

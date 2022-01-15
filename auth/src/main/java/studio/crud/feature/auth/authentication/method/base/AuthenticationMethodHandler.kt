@@ -1,6 +1,6 @@
 package studio.crud.feature.auth.authentication.method.base
 
-import com.antelopesystem.crudframework.utils.component.componentmap.annotation.ComponentMapKey
+import studio.crud.crudframework.utils.component.componentmap.annotation.ComponentMapKey
 import studio.crud.feature.auth.authentication.method.enums.AuthenticationMethodType
 import studio.crud.feature.auth.authentication.model.CustomParamsDTO
 import studio.crud.feature.auth.entity.model.Entity

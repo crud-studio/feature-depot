@@ -1,7 +1,7 @@
 package studio.crud.feature.dashboard.model
 
-import com.antelopesystem.crudframework.fieldmapper.annotation.DefaultMappingTarget
-import com.antelopesystem.crudframework.fieldmapper.annotation.MappedField
+import studio.crud.crudframework.fieldmapper.annotation.DefaultMappingTarget
+import studio.crud.crudframework.fieldmapper.annotation.MappedField
 import org.hibernate.annotations.Type
 import studio.crud.feature.dashboard.ro.DashboardWidgetRelRO
 import studio.crud.feature.dashboard.ro.WidthDTO

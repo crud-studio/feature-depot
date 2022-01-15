@@ -1,6 +1,6 @@
 package studio.crud.feature.auth.authentication.rules
 
-import com.antelopesystem.crudframework.crud.annotation.Deleteable
+import studio.crud.crudframework.crud.annotation.Deleteable
 import studio.crud.feature.jpa.model.AbstractJpaUpdatableEntity
 import javax.persistence.*
 

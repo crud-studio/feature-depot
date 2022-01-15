@@ -1,8 +1,8 @@
 package studio.crud.feature.auth.authentication
 
-import com.antelopesystem.crudframework.crud.handler.CrudHandler
-import com.antelopesystem.crudframework.modelfilter.dsl.where
-import com.antelopesystem.crudframework.utils.component.componentmap.annotation.ComponentMap
+import studio.crud.crudframework.crud.handler.CrudHandler
+import studio.crud.crudframework.modelfilter.dsl.where
+import studio.crud.crudframework.utils.component.componentmap.annotation.ComponentMap
 import mu.KotlinLogging
 import org.springframework.stereotype.Component
 import studio.crud.feature.auth.authentication.method.base.AuthenticationMethodHandler

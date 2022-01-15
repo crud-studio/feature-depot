@@ -1,7 +1,7 @@
 package studio.crud.feature.auth.security.crud
 
-import com.antelopesystem.crudframework.model.BaseCrudEntity
-import com.antelopesystem.crudframework.modelfilter.DynamicModelFilter
+import studio.crud.crudframework.model.BaseCrudEntity
+import studio.crud.crudframework.modelfilter.DynamicModelFilter
 import org.springframework.security.access.prepost.PreAuthorize
 import org.springframework.stereotype.Component
 import studio.crud.feature.auth.exception.CrudActionNotAllowedException

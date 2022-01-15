@@ -1,7 +1,7 @@
 package studio.crud.feature.notes.controller
 
-import com.antelopesystem.crudframework.modelfilter.DynamicModelFilter
-import com.antelopesystem.crudframework.modelfilter.enums.FilterFieldOperation
+import studio.crud.crudframework.modelfilter.DynamicModelFilter
+import studio.crud.crudframework.modelfilter.enums.FilterFieldOperation
 import org.springframework.beans.factory.annotation.Autowired
 import studio.crud.feature.core.objecttyperesolver.ObjectTypeStore
 import studio.crud.feature.core.util.getField

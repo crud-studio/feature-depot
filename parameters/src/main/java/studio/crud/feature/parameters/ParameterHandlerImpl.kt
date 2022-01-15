@@ -1,7 +1,7 @@
 package studio.crud.feature.parameters
 
-import com.antelopesystem.crudframework.crud.handler.CrudHandler
-import com.antelopesystem.crudframework.modelfilter.dsl.where
+import studio.crud.crudframework.crud.handler.CrudHandler
+import studio.crud.crudframework.modelfilter.dsl.where
 import org.springframework.stereotype.Component
 import studio.crud.feature.parameters.exception.ParameterMisconfiguredException
 import studio.crud.feature.parameters.exception.ParameterNotConfiguredException

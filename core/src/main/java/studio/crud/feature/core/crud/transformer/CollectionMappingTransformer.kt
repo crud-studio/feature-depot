@@ -1,7 +1,7 @@
 package studio.crud.feature.core.crud.transformer
 
-import com.antelopesystem.crudframework.crud.handler.CrudHandler
-import com.antelopesystem.crudframework.fieldmapper.transformer.base.FieldTransformerBase
+import studio.crud.crudframework.crud.handler.CrudHandler
+import studio.crud.crudframework.fieldmapper.transformer.base.FieldTransformerBase
 import org.springframework.stereotype.Component
 import sun.reflect.generics.reflectiveObjects.ParameterizedTypeImpl
 import java.lang.reflect.Field

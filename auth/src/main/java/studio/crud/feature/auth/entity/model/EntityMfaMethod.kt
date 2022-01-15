@@ -1,6 +1,6 @@
 package studio.crud.feature.auth.entity.model
 
-import com.antelopesystem.crudframework.fieldmapper.annotation.MappedField
+import studio.crud.crudframework.fieldmapper.annotation.MappedField
 import studio.crud.feature.auth.authentication.mfa.enums.MfaType
 import studio.crud.feature.auth.authentication.model.CustomParamsDTO
 import studio.crud.feature.jpa.model.AbstractJpaUpdatableEntity

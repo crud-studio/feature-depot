@@ -1,6 +1,6 @@
 package studio.crud.feature.reports
 
-import com.antelopesystem.crudframework.crud.handler.CrudHandler
+import studio.crud.crudframework.crud.handler.CrudHandler
 import com.nhaarman.mockitokotlin2.mock
 import org.junit.jupiter.api.Test
 import strikt.api.expectThrows
