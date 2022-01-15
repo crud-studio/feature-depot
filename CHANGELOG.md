@@ -1,3 +1,10 @@
+# [0.7.0](https://github.com/crud-studio/feature-depot/compare/v0.6.0...v0.7.0) (2022-01-15)
+
+
+### Features
+
+* change to new crud-framework ([88c322e](https://github.com/crud-studio/feature-depot/commit/88c322e1c7536924a57b1c4789ee71442109310c))
+
 # [0.6.0](https://github.com/crud-studio/feature-depot/compare/v0.5.0...v0.6.0) (2021-11-21)
 
 
