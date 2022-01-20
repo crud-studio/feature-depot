@@ -1,3 +1,11 @@
+# [0.8.0](https://github.com/crud-studio/feature-depot/compare/v0.7.0...v0.8.0) (2022-01-20)
+
+
+### Features
+
+* **core:** add entity type handler ([b7228a5](https://github.com/crud-studio/feature-depot/commit/b7228a569f750fbdfe4056e757fa202a37434fa0))
+* **notes:** refactor to entity type handler ([fc0c8fd](https://github.com/crud-studio/feature-depot/commit/fc0c8fd96c30417ff64d95374f878aab53aacd60))
+
 # [0.7.0](https://github.com/crud-studio/feature-depot/compare/v0.6.0...v0.7.0) (2022-01-15)
 
 
