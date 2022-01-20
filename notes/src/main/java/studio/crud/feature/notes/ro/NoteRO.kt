@@ -2,6 +2,7 @@ package studio.crud.feature.notes.ro
 
 import studio.crud.crudframework.fieldmapper.annotation.DefaultMappingTarget
 import studio.crud.crudframework.fieldmapper.annotation.MappedField
+import studio.crud.feature.core.entity.EntityDisplayRO
 import studio.crud.feature.jpa.ro.AbstractJpaUpdatableRO
 import studio.crud.feature.notes.model.Note
 
@@ -21,7 +22,9 @@ class NoteRO(
 
     @MappedField
     var creatorId: String? = null
-    var creatorInfo: NoteEntityInfoRO? = null
-    var targetInfo: NoteEntityInfoRO? = null
+
+    var creatorInfo: EntityDisplayRO? = null
+
+    var targetInfo: EntityDisplayRO? = null
 }
 
