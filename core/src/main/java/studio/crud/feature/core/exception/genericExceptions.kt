@@ -15,6 +15,12 @@ open class InternalException(message: String) : ServerException(message) {
     }
 }
 
+class DeveloperException(message: String) : InternalException(message)
+
+fun developerError(message: String): Nothing {
+    throw DeveloperException(message)
+}
+
 abstract class SystemConfigurationException(message: String): InternalException(message)
 
 abstract class SecurityException(message: String) : ServerException(message)
