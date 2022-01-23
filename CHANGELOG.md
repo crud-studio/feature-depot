@@ -1,3 +1,10 @@
+## [0.8.1](https://github.com/crud-studio/feature-depot/compare/v0.8.0...v0.8.1) (2022-01-23)
+
+
+### Bug Fixes
+
+* fix github repository url ([2e78282](https://github.com/crud-studio/feature-depot/commit/2e78282167cf478043cef3e1876fdd2e42379ea5))
+
 # [0.8.0](https://github.com/crud-studio/feature-depot/compare/v0.7.0...v0.8.0) (2022-01-20)
 
 
