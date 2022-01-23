@@ -500,7 +500,7 @@
                 <repository>
                     <id>github</id>
                     <name>GitHub Packages</name>
-                    <url>https://maven.pkg.github.com/crud-studio/§</url>
+                    <url>https://maven.pkg.github.com/crud-studio/feature-depot</url>
                 </repository>
             </distributionManagement>
         </profile>
